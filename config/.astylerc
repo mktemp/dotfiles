@@ -1,0 +1,15 @@
+style=allman
+indent=spaces=4
+indent-switches
+indent-namespaces
+indent-preproc-define
+indent-col1-comments
+min-conditional-indent=0
+unpad-paren
+pad-paren-in
+pad-header
+pad-oper
+align-pointer=type
+fill-empty-lines
+keep-one-line-blocks
+max-code-length=100
