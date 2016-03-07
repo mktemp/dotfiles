@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 
+# TODO rewrite it on pure sh
+# since we don't have to depend on python 
+# and even on it's implementation
+
 import subprocess, os, sys
 from sys import stderr
 from paths import paths
