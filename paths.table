@@ -1,0 +1,21 @@
+# backslash:    supported
+# quoting:      not supported
+# delimiter:    spaces
+# comment:      the hash symbol
+# ------------------------------------------
+     
+    # emptyline with a comment
+.astylerc             ~/ # comment after text
+.gitconfig            ~/
+.tmux.conf            ~/
+.Xdefaults            ~/
+.xinitrc              ~/
+.zshrc                ~/
+i3.conf               ~/.i3/config
+qutebrowser.conf      ~/.config/qutebrowser/
+qutebrowser_keys.conf ~/.config/qutebrowser/
+resolv.conf           /etc/
+torrc                 /etc/tor/
+vimrc                 /etc/
+#wpa_supplicant.conf  /etc/wpa_supplicant/
+
