@@ -11,10 +11,11 @@
 .Xdefaults            ~/
 .xinitrc              ~/
 .zshrc                ~/
-i3.conf               ~/.i3/config
+i3.conf               ~/.config/i3/config
 qutebrowser.conf      ~/.config/qutebrowser/
 qutebrowser_keys.conf ~/.config/qutebrowser/
 resolv.conf           /etc/
+shalarm.cfg           ~/.config/shalarm/
 torrc                 /etc/tor/
 vimrc                 /etc/
 #wpa_supplicant.conf  /etc/wpa_supplicant/
