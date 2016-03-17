@@ -1,11 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 
-TABLE="paths.table"
+TABLE="./paths.table"
 declare -A paths succeed failed ignored
 declare -a temp 
 
 # read file & destination paths by line
-IFS=$'\n' read -d '' -ra temp < "$TABLE"
+IFS=$'\n' read -d '' -r -a temp < "$TABLE"
 
 for line in "${temp[@]}"; do
     # delete in line comments
@@ -13,7 +13,7 @@ for line in "${temp[@]}"; do
     # check whether the line not empty
     if [[ -n "${line// }" ]]; then
         # getting filename and destination path
-        # ****n' pipes, i couldn't make them work, so:
+        # ****n' pipes, I couldn't make them work, thus:
         echo $line > ".tmpfile"
         read file dest < ".tmpfile"
         # store values in a dict
@@ -21,7 +21,7 @@ for line in "${temp[@]}"; do
     fi
 done; rm ".tmpfile"; unset temp
 
-# iterate over the paths dict to ensure it's ok
+# iterate through the paths dict to ensure it's ok
 for file in "${!paths[@]}"; do
     printf "%s %s\n" "$file" "${paths["$file"]}"
 done
