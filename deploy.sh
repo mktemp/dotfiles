@@ -9,17 +9,17 @@ declare -a temp
 # where to link $filename? [default = $filepath]
 deploy()
 {
-    ;
+    echo -n # just pass
 }
 
 check_ignored()
 {
-    ;
+    echo -n # just pass
 }
 
 print_statistics()
 {
-    ;
+    echo -n # just pass
 }
 
 read_config_table()
@@ -49,7 +49,7 @@ read_config_table()
 
 main()
 {
-    ;
+    echo -n # just pass
 }
 
 main
