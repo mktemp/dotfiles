@@ -18,5 +18,6 @@ resolv.conf           /etc/
 shalarm.cfg           ~/.config/shalarm/
 torrc                 /etc/tor/
 vimrc                 /etc/
+.clang-config         ~/
 #wpa_supplicant.conf  /etc/wpa_supplicant/
 
