@@ -231,6 +231,7 @@ colo evening
 "set t_Co=256  "256 colors support
 autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
 set title
+set display=lastline,uhex
 
 nnoremap k gk
 nnoremap j gj
