@@ -13,7 +13,7 @@
 ## https://www.torproject.org/docs/faq#torrc
 
 ## Default username and group the server will run as
-User tor
+#User tor
 
 PIDFile /var/run/tor/tor.pid
 
@@ -43,10 +43,9 @@ SocksPort 9050 # Default: Bind to localhost:9050 for local connections.
 ## Send every possible message to /var/lib/log/tor/debug.log
 #Log debug file /var/lib/log/tor/debug.log
 ## Use the system log instead of Tor's logfiles
-#Log notice syslog
+Log notice syslog
 ## To send all messages to stderr:
 #Log debug stderr
-Log warn syslog
 
 ## Uncomment this to start the process in the background... or use
 ## --runasdaemon 1 on the command line. This is ignored on Windows;
@@ -203,4 +202,6 @@ BridgeRelay 1
 VirtualAddrNetworkIPv4 10.192.0.0/10
 AutomapHostsOnResolve 1
 TransPort 9040
+# I could not get iptables port redirecting work, so execute this first:
+# setcap 'cap_net_bind_service=+ep' $(which tor)
 DNSPort 53

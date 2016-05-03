@@ -1,5 +1,3 @@
-" LOCATED: /etc/vim/vimrc || ~/.vimrc
-
 scriptencoding utf-8
 " ^^ Please leave the above line at the start of the file.
 
@@ -202,8 +200,8 @@ endif
 " vim: set fenc=utf-8 tw=80 sw=2 sts=2 et foldmethod=marker :
 
 
-" ---- MY EDITION ---- "
-" ---- Set the editor variables ---- "
+" ---- User settings ---- "
+
 "set cursorline
 "hi CursorLineNr ctermfg=red
 "hi clear CursorLine
@@ -219,71 +217,42 @@ set linebreak
 set nowrap
 set number
 set tabstop=4
-set si
+set softtabstop=4  "unindent on backspace
+set smartindent
 set shiftwidth=4
 set expandtab
-"set t_Co=8
-filetype detect
+set mouse=a
+map <ScrollWheelUp> <C-Y>
+map <ScrollWheelDown> <C-E>
+set langmap=йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,пg,рh,оj,лk,дl,э',яz,чx,сc,мv,иb,тn,ьm,б\\,,ю.,ё',ЙQ,ЦW,УE,КR,ЕT,НY,ГU,ШI,ЩO,ЗP,Х\{,Ъ\},ФA,ЫS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,Ж\:,Э\",ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,Б\<,Ю\>,Ё~
+set secure
+set exrc
 colo evening
-
-" ---- Key bindings ---- "
-"if system("echo -n $EUID") == "1003" || system("echo -n $EUID") == "1006" || system("echo -n $EUID") == "1008" || system("echo -n $EUID") == "1009"
-"  if &ft == ""
-"    edit! %:p:t.cpp
-"  endif 
-"endif
+"set t_Co=256  "256 colors support
+autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
+set title
 
 nnoremap k gk
 nnoremap j gj
 
-if filereadable(expand('%:p:h')."/Makefile")
-  cd  %:p:h/
-  nnoremap <F6> :!clear; make -B -j3<CR>
-  inoremap <F6> <ESC>:!clear; make -B -j3<CR>
-elseif &ft == "cpp"
-  inoremap <F6> <ESC>:w<CR>:!clear && /bin/bash -c "cd %:p:h && clang++ %:p:t -o %:p:r && echo 'compiling done' && %:p:r"<CR>
-  nnoremap <F6> <ESC>:w<CR>:!clear && /bin/bash -c "cd %:p:h && clang++ %:p:t -o %:p:r && echo 'compiling done' && %:p:r"<CR>
-  inoremap <F7> <ESC>:w<CR>:!clear && /bin/bash -c "cd %:p:h && clang++ %:p:t -o %:p:r && echo 'compiling done'"<CR>
-  nnoremap <F7> <ESC>:w<CR>:!clear && /bin/bash -c "cd %:p:h && clang++ %:p:t -o %:p:r && echo 'compiling done'"<CR>
-  inoremap <F10> <ESC>:!clear && /bin/bash -c "echo 'executing' %:p:r; %:p:r"<CR>
-  nnoremap <F10> <ESC>:!clear && /bin/bash -c "echo 'executing' %:p:r; %:p:r"<CR>
-elseif &ft == "c"
-  inoremap <F6> <ESC>:w<CR>:!clear && /bin/bash -c "cd %:p:h && clang %:p:t -o %:p:r && echo 'compiling done' && %:p:r"<CR>
-  nnoremap <F6> <ESC>:w<CR>:!clear && /bin/bash -c "cd %:p:h && clang %:p:t -o %:p:r && echo 'compiling done' && %:p:r"<CR>
-  inoremap <F7> <ESC>:w<CR>:!clear && /bin/bash -c "cd %:p:h && clang %:p:t -o %:p:r && echo 'compiling done'"<CR>
-  nnoremap <F7> <ESC>:w<CR>:!clear && /bin/bash -c "cd %:p:h && clang %:p:t -o %:p:r && echo 'compiling done'"<CR>
-  inoremap <F10> <ESC>:!clear && /bin/bash -c "echo 'executing' %:p:r; %:p:r"<CR>
-  nnoremap <F10> <ESC>:!clear && /bin/bash -c "echo 'executing' %:p:r; %:p:r"<CR>
-elseif &ft == "sh"
-  inoremap <F6> <ESC>:w<CR>:!clear && cd %:p:h && chmod +x %:p:t && /bin/bash ./%:p:t<CR>
-  nnoremap <F6> :w !clear && cd %:p:h && chmod +x %:p:t && /bin/bash ./%:p:t<CR>
+filetype detect
+if &ft == "cpp" || &ft == "c"
+  set matchpairs+=<:> 
 endif
+
+"TODO
+"1. Bind key ai si / noai nosi
+"2. Bind Wq, WQ, qw, QW, etc to :wq
+"3. Bind key to highlight 81th column
+"4. Bind key for unhighlighting search
+"5. Unidentation on backspace
+"6. Commenting lines by hotkey
 
 inoremap <t_k8> <ESC>:w<CR>
 nnoremap <t_k8> <ESC>:w<CR>
 
 nnoremap <F9> :set wrap!<CR>
-inoremap <F9> <ESC>:set wrap!<CR>i
-
-if &ft == "cpp"
-  noremap <t_F2> ggi
-                  \/* Copyright <C-R>=strftime("%Y")<CR>, by Pikulin Ilya */<CR>
-                  \#include <iostream><CR>
-                  \#include <cstdio><CR>
-                  \#include <cmath><CR>
-                  \#include <cstdlib><CR>
-                  \<CR>
-                  \#define DEBUGGING<CR>
-                  \<CR>
-                  \using namespace std;
-                  \<CR><CR>int main( int argc, char** argv )<CR>
-                  \{
-                  \<CR><CR><CR>return 0;<CR>}
-                  \<ESC>3ki<tab>
-  noremap <t_F1> <ESC>:w<CR>:!clear && echo "Applying astyle..." && astyle --options=/etc/astyle.conf %<CR> :e<CR> 
-                  \:echo "astyle:" expand("%:t") "formatted"<CR>
-
-endif
+inoremap <F9> <ESC>:set wrap!<CR>a
 
 noremap <C-h> 4h
 noremap <C-l> 4l
@@ -292,10 +261,13 @@ noremap <C-l> 4l
 inoremap <C-Left> <ESC>ld4hi
 inoremap <C-Right> <ESC>ld4li
 
-set langmap=йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,пg,рh,оj,лk,дl,э',яz,чx,сc,мv,иb,тn,ьm,б\\,,ю.,ё',ЙQ,ЦW,УE,КR,ЕT,НY,ГU,ШI,ЩO,ЗP,Х\{,Ъ\},ФA,ЫS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,Ж\:,Э\",ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,Б\<,Ю\>,Ё~
+filetype off
+call vundle#rc()
 
-nmap р h
-nmap о j
-nmap л k
-nmap д l
+Plugin 'sickill/vim-pasta'
+"Plugin 'Rip-Rip/clang_complete'
+let g:ycm_server_python_interpreter='/usr/bin/python3'
+Plugin 'Valloric/YouCompleteMe'
+filetype plugin indent on
+
 " --------
