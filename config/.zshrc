@@ -51,10 +51,10 @@ alias links="links https://google.com"
 alias df="pydf -h"
 alias reboot="shutdown -r now"
 alias feh="feh -."
-alias py=python
-alias bpy=bpython
-alias py2=python2
-alias py3=python3
+alias py="ipython --pprint --no-banner --autoedit-syntax --no-confirm-exit"
+alias py2="ipython2 --pprint --no-banner --autoedit-syntax --no-confirm-exit"
+alias py3="ipython3 --pprint --no-banner --autoedit-syntax --no-confirm-exit"
+alias bpy="bpython"
 alias asc="feh -. ascii-image"
 alias grep="grep --color=auto"
 alias asct="vim ascii-text"
@@ -63,7 +63,13 @@ alias cb="xclip -selection clipboard"
 alias cal="cal -m"
 alias R="R --quiet"
 alias promises="watch -n 1 promise list_undone"
-#alias startx="startx -- vt$(echo $TTY | sed -r 's/.*tty(.*).*/\1/g')"
+alias notebook="jupyter-notebook --notebook-dir=~/ipynb"
+# vim() { 
+#     tmux bind -n WheelUpPane send-keys -M
+#     command vim "$@"
+#     tmux bind -n WheelUpPane copy-mode -e \\\; send-keys -M 
+# }
+
 
 alias -s jar="java -jar"
 alias -s jpg="feh -."
@@ -86,7 +92,7 @@ zstyle ':completion:*' menu select=2
 zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
 zstyle ':completion:*:descriptions' format '%U%F{yellow}%d%f%u'
 
-#environement variables
+# environement variables
 setopt CORRECT
 setopt ALWAYS_TO_END
 setopt NOTIFY
@@ -94,18 +100,17 @@ setopt NOBEEP
 setopt AUTOLIST
 setopt AUTOCD
 setopt PRINT_EIGHT_BIT
-#setopt HIST_SAVE_NO_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 setopt INTERACTIVE_COMMENTS
 setopt EXTENDED_HISTORY
 setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
 
-# for have colors
+# to have colors
 autoload -U colors
 colors
 
-# define your colors here (i hate white background)
+# colors definition
 host_color="green" 
 path_color="blue"
 date_color="white"
@@ -132,6 +137,19 @@ HISTSIZE=10000
 SAVEHIST=10000
 HIST_STAMPS="mm/dd/yyyy"
 
-PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/vmware/bin:/usr/x86_64-pc-linux-gnu/gcc-bin/4.9.3:~/.gem/ruby/2.3.0/bin:/home/local/usr/bin/:~/go/bin"
+PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/vmware/bin:/usr/x86_64-pc-linux-gnu/gcc-bin/4.9.3:~/.gem/ruby/2.3.0/bin:/home/local/usr/bin/:$HOME/go/bin:."
 PATH="$PATH:$HOME/Binary:/opt/vmware/bin"
 export GOPATH=~/go
+#export LESS=-asrRix8
+
+# TODO
+# 0. Clear the whole structure
+# 1. Prompt:
+#       a. clear color
+#       b. show git branch and status, if any
+# 2. Move some aliases to functions, for better arguments handling
+# 3. Clear $PATH
+# 4. Look for some life improving tips
+
+tmux attach -t base 2>/dev/null || tmux new -s base 2>/dev/null || true
+

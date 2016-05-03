@@ -3,10 +3,17 @@
     ci = commit -v
     st = status
     br = branch
-    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-    log = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    h = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    l = log --name-status --graph
     type = cat-file -t
     dump = cat-file -p
 
 [push]
 	default = simple
+
+[user]
+	useconfigonly = true
+    # Identity per project
+    # $ git config user.name YourName
+    # $ git config user.email your@email.com
+
