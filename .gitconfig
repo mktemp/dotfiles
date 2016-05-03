@@ -9,10 +9,10 @@
     dump = cat-file -p
 
 [push]
-	default = simple
+    default = simple
 
 [user]
-	useconfigonly = true
+    useconfigonly = true
     # Identity per project
     # $ git config user.name YourName
     # $ git config user.email your@email.com
