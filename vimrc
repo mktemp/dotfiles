@@ -291,8 +291,8 @@ endif
 imap <t_k8> <ESC>:w<CR>
 nmap <t_k8> :w<CR>
 
+imap <F9> <C-o>:set wrap!<CR>
 nmap <F9> :set wrap!<CR>
-imap <F9> <C-o>:set wrap!
 
 
 " Black magick of plugins loading using aur/vundle
