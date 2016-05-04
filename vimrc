@@ -217,7 +217,7 @@ set linebreak
 set nowrap
 set number
 set tabstop=4
-set softtabstop=4  "unindent on backspace
+set softtabstop=4  "easy unindentation on backspace
 set smartindent
 set shiftwidth=4
 set expandtab
@@ -228,13 +228,52 @@ set langmap=йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,пg,
 set secure
 set exrc
 colo evening
-"set t_Co=256  "256 colors support
+"set t_Co=256  "256 colors mode, not using it
 autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
 set title
 set display=lastline,uhex
 
-nnoremap k gk
+" Nice navigation on long wrapped lines
 nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+
+nnoremap <Down> gj
+nnoremap <Up> gk
+nnoremap <Home> g<Home>
+nnoremap <End>  g<End>
+vnoremap <Down> gj
+vnoremap <Up> gk
+vnoremap <Home> g<Home>
+vnoremap <End>  g<End>
+inoremap <Down> <C-o>gj
+inoremap <Up> <C-o>gk
+inoremap <Home> <C-o>g<Home>
+inoremap <End>  <C-o>g<End>
+
+" No more typos!
+cmap W w
+cmap ц w
+cmap Ц w
+
+cmap Q q
+cmap й q
+cmap Й q
+
+cmap qw wq
+cmap Wq wq
+cmap WQ wq
+cmap Qw wq
+cmap QW wq
+
+cmap цй wq
+cmap йц wq
+cmap Цй wq
+cmap ЦЙ wq
+cmap Йц wq
+cmap ЙЦ wq
+
 
 filetype detect
 if &ft == "cpp" || &ft == "c"
@@ -243,32 +282,26 @@ endif
 
 "TODO
 "1. Bind key ai si / noai nosi
-"2. Bind Wq, WQ, qw, QW, etc to :wq
-"3. Bind key to highlight 81th column
-"4. Bind key for unhighlighting search
-"5. Unidentation on backspace
-"6. Commenting lines by hotkey
+"2. Bind key to highlight 81th column
+"3. Bind key for unhighlighting search
+"4. Unidentation on backspace
+"5. Commenting lines by hotkey
 
-inoremap <t_k8> <ESC>:w<CR>
-nnoremap <t_k8> <ESC>:w<CR>
+" Hotkeys
+imap <t_k8> <ESC>:w<CR>
+nmap <t_k8> :w<CR>
 
-nnoremap <F9> :set wrap!<CR>
-inoremap <F9> <ESC>:set wrap!<CR>a
+nmap <F9> :set wrap!<CR>
+imap <F9> <C-o>:set wrap!
 
-noremap <C-h> 4h
-noremap <C-l> 4l
-noremap <C-h> 4h
-noremap <C-l> 4l
-inoremap <C-Left> <ESC>ld4hi
-inoremap <C-Right> <ESC>ld4li
 
+" Black magick of plugins loading using aur/vundle
 filetype off
 call vundle#rc()
 
 Plugin 'sickill/vim-pasta'
 "Plugin 'Rip-Rip/clang_complete'
-let g:ycm_server_python_interpreter='/usr/bin/python3'
+let g:ycm_server_python_interpreter='/usr/bin/python3'  "needed to start ycm in archlinux
 Plugin 'Valloric/YouCompleteMe'
 filetype plugin indent on
 
-" --------
