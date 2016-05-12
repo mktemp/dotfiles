@@ -233,11 +233,38 @@ autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
 set title
 set display=lastline,uhex
 
+" For mouse drag&dropping
+set mouse+=a
+if &term =~ '^screen'
+    " tmux knows the extended mouse mode
+    set ttymouse=xterm2
+endif
+
+" Hotkeys
+imap <t_k8> <ESC>:w<CR>
+nmap <t_k8> :w<CR>
+
+imap <F9> <C-o>:set wrap!<CR>
+nmap <F9> :set wrap!<CR>
+
+" Bindings
+nmap ,t :tabnew<CR>
+"nmap <C-Tab> gt
+"nmap <C-S-Tab> gT
+"FIXME why meta key does not work?
+"map <M-1> 1gt
+"map <M-2> 2gt
+"map <M-3> 3gt
+
 " Nice navigation on long wrapped lines
 nnoremap j gj
 nnoremap k gk
 vnoremap j gj
 vnoremap k gk
+nmap о j
+nmap л k
+vmap о j
+vmap л k
 
 nnoremap <Down> gj
 nnoremap <Up> gk
@@ -252,20 +279,34 @@ inoremap <Up> <C-o>gk
 inoremap <Home> <C-o>g<Home>
 inoremap <End>  <C-o>g<End>
 
-" No more typos!
+" No more typos! Aaaaargh
 cmap W w
 cmap ц w
 cmap Ц w
+cmap w1 w!
+cmap W1 w!
+cmap ц1 w!
+cmap Ц1 w!
 
 cmap Q q
 cmap й q
 cmap Й q
+cmap q1 q!
+cmap Q1 q!
+cmap й1 q!
+cmap Й1 q!
 
 cmap qw wq
 cmap Wq wq
 cmap WQ wq
 cmap Qw wq
 cmap QW wq
+cmap wq1 wq!
+cmap qw1 wq!
+cmap Wq1 wq!
+cmap WQ1 wq!
+cmap Qw1 wq!
+cmap QW1 wq!
 
 cmap цй wq
 cmap йц wq
@@ -273,6 +314,12 @@ cmap Цй wq
 cmap ЦЙ wq
 cmap Йц wq
 cmap ЙЦ wq
+cmap цй1 wq!
+cmap йц1 wq!
+cmap Цй1 wq!
+cmap ЦЙ1 wq!
+cmap Йц1 wq!
+cmap ЙЦ1 wq!
 
 
 filetype detect
@@ -286,22 +333,65 @@ endif
 "3. Bind key for unhighlighting search
 "4. Unidentation on backspace
 "5. Commenting lines by hotkey
+"6. english / vs russian .
+"
+"Some useful tips: https://habrahabr.ru/post/265441/
+"
+"7.  Visual buffers & tabs; nice hotkeys for them
+"       https://habrahabr.ru/post/102373/#comment_3179620
+"       https://habrahabr.ru/post/102373/#comment_3181848
+"8.  Better parens/braces/brackets/quotes autocompletion (this one does "not recognize ^W); Surrounding
+"9.  Insertion with no crazy autoindentation
+"10. Syntax-based blocks folding 
+"11. Semantic and keywords based autocompletion (C++ at least, Python ideally)
+"12. No softtab unindentation after any non-space symbols
+"13. Look at abilities of git integration plugins
+"14. Live diff hotkey
+"
+"15. Set up hex editing environment http://vim.wikia.com/wiki/Improved_hex_editing
+"
+"16. Bind <C-CR> to newline; standard emacs/readline hotkeys; <C-j> <C-k>
+"17. Set option for leaving some strings between cursor and screen edge
+"18. For sport programming, write a plugin that adds the three comment lines to the file:
+"    a. creation time
+"    b. last saving time
+"    c. diff 
 
-" Hotkeys
-imap <t_k8> <ESC>:w<CR>
-nmap <t_k8> :w<CR>
 
-imap <F9> <C-o>:set wrap!<CR>
-nmap <F9> :set wrap!<CR>
+" Load plugins
 
-
-" Black magick of plugins loading using aur/vundle
+"let g:ycm_server_python_interpreter='/usr/bin/python3'  "seemed to be needed to start ycm in archlinux
+"let g:AutoPairsFlyMode = 1
 filetype off
-call vundle#rc()
 
-Plugin 'sickill/vim-pasta'
-"Plugin 'Rip-Rip/clang_complete'
-let g:ycm_server_python_interpreter='/usr/bin/python3'  "needed to start ycm in archlinux
-Plugin 'Valloric/YouCompleteMe'
-filetype plugin indent on
+" Clang Complete Settings
+let g:clang_auto_select=1
+let g:clang_restore_cr_imap=1
+let g:clang_use_library=1
+let g:clang_library_path='/usr/lib/libclang.so'
+let g:clang_debug=1
+let g:clang_complete_copen=1
+let g:clang_complete_macros=1
+let g:clang_complete_patterns=0
+let g:clang_memory_percent=70
+let g:clang_user_options=' || exit 0'
+set previewheight=1
+set completeopt=menu,longest
+map <F2> <C-]>
+"imap <C-Space> <C-X><C-U>
+
+" Supertab settings
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
+call vundle#rc()
+Plugin 'auto-pairs'
+"Plugin 'delimitMate'  " maybe it could be configured well.
+Plugin 'tabular'
+Plugin 'vim-pasta'
+"Plugin 'clang_complete'
+Plugin 'vim-inccomplete'
+Plugin 'supertab'
+"Plugin 'YouCompleteMe'
+
+filetype plugin indent on  "what is this?
 

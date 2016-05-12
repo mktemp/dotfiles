@@ -36,44 +36,34 @@ bindkey '^x^e' edit-command-line
 # Activation
 compinit
 
-# TODO enable git plugin
-#source /home/d/oldfiles/.oh-my-zsh/plugins/git/git.plugin.zsh
-
 alias mydf="df -hPT | column -t"
+alias l="ls -ail"
 alias ll="ls -lah"
-#alias rm="rm -i"
+alias rm="rm -I"
 alias cp="cp -i"
 alias ls="ls --color=auto"
-alias l="ls -ail"
-alias cl="clear"
-alias astyle="astyle --options=/etc/astyle.conf"
-alias links="links https://google.com"
+alias links="links https://google.com"  # FIXME use https://google.com only when no arguments were given
 alias df="pydf -h"
 alias reboot="shutdown -r now"
 alias feh="feh -."
-alias py="ipython --pprint --no-banner --autoedit-syntax --no-confirm-exit"
-alias py2="ipython2 --pprint --no-banner --autoedit-syntax --no-confirm-exit"
-alias py3="ipython3 --pprint --no-banner --autoedit-syntax --no-confirm-exit"
+alias py="python"
+alias py2="python2"
+alias py3="python3"
+alias ipy="ipython --pprint --no-banner --autoedit-syntax --no-confirm-exit"
+alias ipy2="ipython2 --pprint --no-banner --autoedit-syntax --no-confirm-exit"
+alias ipy3="ipython3 --pprint --no-banner --autoedit-syntax --no-confirm-exit"
 alias bpy="bpython"
-alias asc="feh -. ascii-image"
 alias grep="grep --color=auto"
-alias asct="vim ascii-text"
 alias pb="xclip -selection primary"
 alias cb="xclip -selection clipboard"
 alias cal="cal -m"
 alias R="R --quiet"
-alias promises="watch -n 1 promise list_undone"
-alias notebook="jupyter-notebook --notebook-dir=~/ipynb"
+alias nbook="jupyter-notebook"
 # vim() { 
 #     tmux bind -n WheelUpPane send-keys -M
 #     command vim "$@"
 #     tmux bind -n WheelUpPane copy-mode -e \\\; send-keys -M 
 # }
-
-
-alias -s jar="java -jar"
-alias -s jpg="feh -."
-alias -s png="feh -."
 
 # do a du -hs on each dir on current path
 alias lsdir="for dir in *;do;if [ -d \$dir ];then;du -hsL \$dir;fi;done"
@@ -125,6 +115,7 @@ prompt_color="yellow"
 #cpath="%B%{$fg[$path_color]%}%/%b"
 #end="%{$reset_color%}%% "
 
+# Most scary part
 host="%B%{$fg[$host_color]%}%n"
 cpath="%B%{$fg[$path_color]%}%c%b"
 #end="%(?..%{$fg[$err_color]%}%? )%B%{$fg[$prompt_color]%}%#%{$fg[$text_color]%}"
@@ -137,19 +128,33 @@ HISTSIZE=10000
 SAVEHIST=10000
 HIST_STAMPS="mm/dd/yyyy"
 
-PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/vmware/bin:/usr/x86_64-pc-linux-gnu/gcc-bin/4.9.3:~/.gem/ruby/2.3.0/bin:/home/local/usr/bin/:$HOME/go/bin:."
-PATH="$PATH:$HOME/Binary:/opt/vmware/bin"
-export GOPATH=~/go
-#export LESS=-asrRix8
+# FIXME should be refactored
+PATH="$PATH\
+:/usr/local/sbin\
+:/usr/local/bin\
+:/usr/sbin\
+:/usr/bin\
+:/sbin\
+:/bin\
+:/opt/vmware/bin\
+:/usr/x86_64-pc-linux-gnu/gcc-bin/4.9.3\
+:~/.gem/ruby/2.3.0/bin\
+:/home/local/usr/bin/\
+:$HOME/go/bin\
+:.\
+:$HOME/repos/metasploit-framework\
+"
 
 # TODO
 # 0. Clear the whole structure
-# 1. Prompt:
-#       a. clear color
-#       b. show git branch and status, if any
-# 2. Move some aliases to functions, for better arguments handling
-# 3. Clear $PATH
-# 4. Look for some life improving tips
+# 1. Prompt color resetting
+# 2. Git branch and a star if there are any changes
+# 3. Move some aliases to functions, for better arguments handling
+# 4. Clear $PATH
+# 5. Look for some life improving tips
+# 6. Don't remove whitespace before the pipeline sign
+# 7. Suggestions based on the whole left string, not the first word only
+# 8. Make ^C removing non-letter characters if there're no more letters in the string
+# 9. Cross-language correction
 
 tmux attach -t base 2>/dev/null || tmux new -s base 2>/dev/null || true
-
