@@ -42,7 +42,9 @@ alias ll="ls -lah"
 alias rm="rm -I"
 alias cp="cp -i"
 alias ls="ls --color=auto"
-alias links="links https://google.com"  # FIXME use https://google.com only when no arguments were given
+links() {
+    command links $(if [[ -z "$@" ]]; then echo https://google.com; else echo "$@"; fi)
+}
 alias df="pydf -h"
 alias reboot="shutdown -r now"
 alias feh="feh -."
@@ -59,11 +61,18 @@ alias cb="xclip -selection clipboard"
 alias cal="cal -m"
 alias R="R --quiet"
 alias nbook="jupyter-notebook"
-# vim() { 
-#     tmux bind -n WheelUpPane send-keys -M
-#     command vim "$@"
-#     tmux bind -n WheelUpPane copy-mode -e \\\; send-keys -M 
-# }
+upgrd() {
+    tmpfile=$(mktemp)
+    yaourt -Su 1>&1 1>$tmpfile
+    upgraded=$(cat $tmpfile | grep upgrading | tail -n 1 | cut -d / -f 1 | cut -d '(' -f 2)
+    if [[ -z $upgraded ]] return
+    difference=$(( $_to_be_upgraded - $upgraded ))
+    if [[ 0 -lt $difference ]]; then
+        echo $difference > /usr/local/share/sysautoupdate/count
+    else
+        echo > /usr/local/share/sysautoupdate/count
+    fi
+}
 
 # do a du -hs on each dir on current path
 alias lsdir="for dir in *;do;if [ -d \$dir ];then;du -hsL \$dir;fi;done"
@@ -81,6 +90,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
 zstyle ':completion:*:descriptions' format '%U%F{yellow}%d%f%u'
+zstyle ':completion:*' rehash true  # EXPENSIVE
 
 # environement variables
 setopt CORRECT
@@ -96,11 +106,22 @@ setopt EXTENDED_HISTORY
 setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
 
-# to have colors
+## PROMPT
+# git info
+git_branch() { 
+    br=$(git branch 2>/dev/null | grep '^\*' | cut -d ' ' -f 2)
+    if [[ -n "$br" ]] echo -n ":$br"
+}
+git_number_of_unpushed_commits() { 
+    (echo -n '+'; git log --branches --not --remotes 2>/dev/null | grep ^commit | wc -l) | grep -v '^+0$'
+}
+git_any_modifications() { if [[ -n "$(git diff $(tmp=$(git_branch); echo ${tmp:1}) 2>/dev/null)" ]] echo '*' }
+
+# enable colors
 autoload -U colors
 colors
 
-# colors definition
+# specify color scheme
 host_color="green" 
 path_color="blue"
 date_color="white"
@@ -108,20 +129,14 @@ text_color="white"
 err_color="red"
 prompt_color="yellow"
 
-
-#PROMPT="%m %{${fg_bold[red]}%}:: %{${fg[green]}%}%3~%(0?. . %{${fg[red]}%}%? )%{${fg[blue]}%}»%{${reset_color}%} "
-#PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
-#host="%{$fg[$host_color]%}%n@%m"
-#cpath="%B%{$fg[$path_color]%}%/%b"
-#end="%{$reset_color%}%% "
-
-# Most scary part
 host="%B%{$fg[$host_color]%}%n"
 cpath="%B%{$fg[$path_color]%}%c%b"
-#end="%(?..%{$fg[$err_color]%}%? )%B%{$fg[$prompt_color]%}%#%{$fg[$text_color]%}"
-end="%(?..%{$fg[$err_color]%}%? )%B%{$fg[$prompt_color]%}%#%{$reset_color%}"
+setopt promptsubst
+git_info='%B%{$fg[black]%}$(git_branch)%{$fg[cyan]%}$(git_number_of_unpushed_commits)%{$fg[red]%}$(git_any_modifications)'  # EXPENSIVE
+end="%(?..%{$fg[$err_color]%}%? )%B%{$fg[$prompt_color]%}%#%{$reset_color%}%b"
 
-PS1="$host $cpath $end "
+PS1="$host $cpath$git_info $end "
+
 
 HISTFILE=$HOME/.histfile
 HISTSIZE=10000
@@ -149,12 +164,20 @@ PATH="$PATH\
 # 0. Clear the whole structure
 # 1. Prompt color resetting
 # 2. Git branch and a star if there are any changes
-# 3. Move some aliases to functions, for better arguments handling
 # 4. Clear $PATH
 # 5. Look for some life improving tips
 # 6. Don't remove whitespace before the pipeline sign
 # 7. Suggestions based on the whole left string, not the first word only
-# 8. Make ^C removing non-letter characters if there're no more letters in the string
+# 8. Make ^W removing non-letter characters if there're no more letters in the string
 # 9. Cross-language correction
 
 tmux attach -t base 2>/dev/null || tmux new -s base 2>/dev/null || true
+
+_to_be_upgraded=$(cat /usr/local/share/sysautoupdate/count)
+if [[ -n "$new_packages" ]]; then
+    if [[ 1 -lt "$new_packages" ]]; then
+        echo "\e[1m"$new_packages"\e[m" packages are available for upgrade
+    else
+        echo "\e[1m"$new_packages"\e[m" package is available for upgrade
+    fi
+fi
