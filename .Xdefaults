@@ -1,0 +1,89 @@
+! NOTE
+! Run `xrdb -merge ~/.Xresources` after editing xterm-related lines.
+
+XTerm*background: #000000
+XTerm*foreground: #ffffff
+!XTerm*scrollstyle: plain
+!XTerm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48,35:48
+
+XTerm*termName: xterm-256color
+XTerm*metaSendsEscape: true
+XTerm*fastScroll: true
+XTerm*faceName: Droid Sans Mono
+XTerm*faceSize: 13.4
+XTerm*locale: true
+XTerm*scrollBar: false
+XTerm*scrollTtyOutput: false
+
+UXTerm*background: #000000
+UXTerm*foreground: #ffffff
+UXTerm*scrollstyle: plain
+UXTerm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48,35:48
+
+UXTerm*termName: xterm-256color
+UXTerm*metaSendsEscape: true
+UXTerm*fastScroll: true
+UXTerm*faceName: Droid Sans Mono
+UXTerm*faceSize: 14
+UXTerm*locale: true
+UXTerm*scrollBar: false
+UXTerm*scrollTtyOutput: false
+
+# thank you http://www.ibb.net/~anne/keyboard.html
+*VT100.Translations: #override \
+    <Key>BackSpace: string(0x7F)\n\
+    <Key>Delete:    string("\033[3~")\n\
+    <Key>Home:      string("\033[1~")\n\
+    <Key>End:       string("\033[4~")
+*ttyModes: erase ^? 
+
+!Xft.autohint: 0
+!Xft.lcdfilter:  lcddefault
+!Xft.hintstyle:  hintfull
+!Xft.hinting: 1
+!Xft.antialias: 1
+!Xft.dpi: 96
+!Xft.rgba: rgb
+
+!Emacs.FontBackend: xft
+
+!XTerm*termName: xterm-256color
+!XTerm*faceName: inconsolata:pixelsize=15
+!XTerm*faceName: monaco:pixelsize=15
+!XTerm*faceName: Liberation Mono:pixelsize=13
+!XTerm*saveLines: 4096
+!XTerm*font: xft:monaco:size=15
+
+!URxvt.depth: 32
+!URxvt*transparent: false
+! URxvt*shading: 40
+! URxvt*tintColor: black
+!URxvt*saveLines: 500
+!URxvt*foreground: white
+!URxvt*background: black
+!URxvt*cursorColor: yellow
+!URxvt*scrollBar: false
+!URxvt*scrollBar_right: false
+!URxvt*loginShell: true
+!URxvt*termName: screen-256color
+! URxvt*faceName: Inconsolata:pixelsize=15
+! URxvt*faceName: Lucida Sans:pixelsize=15
+! URxvt*font: xft:monaco:size=14
+! URxvt*font: xft:Inconsolata:size=12
+! URxvt*font: 9x15
+! URxvt*boldFont: xft:Liberation Mono:bold:pixelsize=14:antialias=true:hinting=true
+! URxvt*font: xft:droid sans mono:pixelsize=14
+! URxvt*boldFont: xft:droid sans mono:medium:pixelsize=14
+! URxvt*font:                 xft:DEjaVu Sans Mono:pixelsize=10
+! URxvt*font:                 xft:Monaco\ for\ Powerline:regular:size=10
+! URxvt*imFont:               xft:Monaco\ for\ Powerline:regular:size=10
+! URxvt*boldFont:             xft:Monaco\ for\ Powerline:bold:size=10
+! URxvt*italicFont:           xft:Monaco\ for\ Powerline:italic:size=10
+! URxvt*boldItalicFont:       xft:Monaco\ for\ Powerline:bold:italic:size=10
+! URxvt*font:                 xft:monaco:regular:size=11
+! URxvt*imFont:               xft:monaco:regular:size=11
+! URxvt*boldFont:             xft:monaco:bold:size=11
+! URxvt*italicFont:           xft:monaco:italic:size=11
+! URxvt*boldItalicFont:       xft:monaco:bold:italic:size=11
+! URxvt*font:                 xft:DejaVu Sans Mono:pixelsize=13
+! URxvt*font:                 xft:Droid Sans Mono:bold:pixelsize=16
