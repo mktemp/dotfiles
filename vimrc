@@ -247,7 +247,6 @@ nmap <t_k8> :w<CR>
 imap <F9> <C-o>:set wrap!<CR>
 nmap <F9> :set wrap!<CR>
 
-" Bindings
 nmap ,t :tabnew<CR>
 "nmap <C-Tab> gt
 "nmap <C-S-Tab> gT
@@ -256,7 +255,8 @@ nmap ,t :tabnew<CR>
 "map <M-2> 2gt
 "map <M-3> 3gt
 
-" Nice navigation on long wrapped lines
+"" Keys workarounds
+" Navigation within a wrapped line
 nnoremap j gj
 nnoremap k gk
 vnoremap j gj
@@ -279,7 +279,13 @@ inoremap <Up> <C-o>gk
 inoremap <Home> <C-o>g<Home>
 inoremap <End>  <C-o>g<End>
 
-" No more typos! Aaaaargh
+" Do not unindent empty lines 
+inoremap <CR> <CR>x<BS>
+nnoremap o ox<BS>
+nnoremap O Ox<BS>
+
+
+" No more typos
 cmap W w
 cmap ц w
 cmap Ц w
@@ -331,7 +337,7 @@ endif
 "1. Bind key ai si / noai nosi
 "2. Bind key to highlight 81th column
 "3. Bind key for unhighlighting search
-"4. Unidentation on backspace
+"x. Unidentation on backspace
 "5. Commenting lines by hotkey
 "6. english / vs russian .
 "
@@ -340,7 +346,7 @@ endif
 "7.  Visual buffers & tabs; nice hotkeys for them
 "       https://habrahabr.ru/post/102373/#comment_3179620
 "       https://habrahabr.ru/post/102373/#comment_3181848
-"8.  Better parens/braces/brackets/quotes autocompletion (this one does "not recognize ^W); Surrounding
+"8.  Better parens/braces/brackets/quotes autocompletion (this one does not recognize ^W); Surrounding
 "9.  Insertion with no crazy autoindentation
 "10. Syntax-based blocks folding 
 "11. Semantic and keywords based autocompletion (C++ at least, Python ideally)
