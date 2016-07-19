@@ -115,7 +115,13 @@ git_branch() {
 git_number_of_unpushed_commits() { 
     (echo -n '+'; git log --branches --not --remotes 2>/dev/null | grep ^commit | wc -l) | grep -v '^+0$'
 }
-git_any_modifications() { if [[ -n "$(git diff $(tmp=$(git_branch); echo ${tmp:1}) 2>/dev/null)" ]] echo '*' }
+git_any_modifications() { 
+    if [[ -n "$(git diff 2>/dev/null)" ]]; then
+        echo '\e[31m*'  # red
+    elif [[ -n "$(git diff $(tmp=$(git_branch); echo ${tmp:1}) 2>/dev/null)" ]]; then
+        echo '\e[37m*'  # black
+    fi
+}
 
 # enable colors
 autoload -U colors
@@ -132,7 +138,7 @@ prompt_color="yellow"
 host="%B%{$fg[$host_color]%}%n"
 cpath="%B%{$fg[$path_color]%}%c%b"
 setopt promptsubst
-git_info='%B%{$fg[black]%}$(git_branch)%{$fg[cyan]%}$(git_number_of_unpushed_commits)%{$fg[red]%}$(git_any_modifications)'  # EXPENSIVE
+git_info='%B%{$fg[black]%}$(git_branch)%{$fg[cyan]%}$(git_number_of_unpushed_commits)$(git_any_modifications)'  # EXPENSIVE
 end="%(?..%{$fg[$err_color]%}%? )%B%{$fg[$prompt_color]%}%#%{$reset_color%}%b"
 
 PS1="$host $cpath$git_info $end "

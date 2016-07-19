@@ -363,6 +363,7 @@ endif
 "    b. last saving time
 "    c. diff 
 
+" newline
 
 " Load plugins
 
