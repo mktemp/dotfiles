@@ -174,10 +174,10 @@ PATH="$PATH\
 tmux attach -t base 2>/dev/null || tmux new -s base 2>/dev/null || true
 
 _to_be_upgraded=$(cat /usr/local/share/sysautoupdate/count)
-if [[ -n "$new_packages" ]]; then
-    if [[ 1 -lt "$new_packages" ]]; then
-        echo "\e[1m"$new_packages"\e[m" packages are available for upgrade
+if [[ -n "$_to_be_upgraded" ]]; then
+    if [[ 1 -lt "$_to_be_upgraded" ]]; then
+        echo "\e[1m"$_to_be_upgraded"\e[m" packages are available for upgrade
     else
-        echo "\e[1m"$new_packages"\e[m" package is available for upgrade
+        echo "\e[1m"$_to_be_upgraded"\e[m" package is available for upgrade
     fi
 fi
