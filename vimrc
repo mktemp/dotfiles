@@ -383,15 +383,15 @@ map <F2> <C-]>
 " Supertab settings
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
-call vundle#rc()
-Plugin 'auto-pairs'
-"Plugin 'delimitMate'  " maybe it could be configured well.
-Plugin 'tabular'
-Plugin 'vim-pasta'
-"Plugin 'clang_complete'
-Plugin 'vim-inccomplete'
-Plugin 'supertab'
-"Plugin 'YouCompleteMe'
+""call vundle#rc()
+""Plugin 'auto-pairs'
+""Plugin 'delimitMate'  " maybe it could be configured well.
+"Plugin 'tabular'
+"Plugin 'vim-pasta'
+""Plugin 'clang_complete'
+"Plugin 'vim-inccomplete'
+"Plugin 'supertab'
+""Plugin 'YouCompleteMe'
 
 filetype plugin indent on  "what is this?
 
