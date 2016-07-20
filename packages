@@ -1,0 +1,645 @@
+core/iana-etc 20160513-1
+core/linux-api-headers 4.5.5-1
+core/acl 2.2.52-2
+core/attr 2.4.47-1
+core/db 5.3.28-3
+core/gdbm 1.12-2
+core/libcap 2.25-1
+core/ncurses 6.0-4
+core/readline 6.3.008-4
+core/dbus 1.10.8-1
+core/expat 2.2.0-1
+core/iptables 1.6.0-1
+core/libdbus 1.10.8-1
+core/libgcrypt 1.7.1-1
+extra/libnftnl 1.0.6-1
+core/libsystemd 230-5
+core/lz4 131-1
+core/openssl 1.0.2.h-1
+core/xz 5.2.2-1
+core/cracklib 2.9.6-1
+core/kbd 2.0.3-1
+core/keyutils 1.5.9-1
+core/kmod 22-1
+core/krb5 1.13.4-1
+core/libidn 1.32-1
+core/libldap 2.4.44-2
+core/libtirpc 1.0.1-2
+core/libutil-linux 2.28-1
+core/pambase 20130928-1
+core/pcre 8.39-1
+core/zlib 1.2.8-4
+core/libelf 0.166-1
+core/libseccomp 2.3.1-1
+core/mpfr 3.1.4.p1-1
+core/popt 1.16-8
+core/systemd 230-5
+core/glib2 2.48.1-1
+core/libunistring 0.9.6-2
+core/linux-firmware 20160516.80d463b-1
+core/lzo 2.09-1
+core/mkinitcpio-busybox 1.24.2-1
+core/libaio 0.3.110-1
+core/libpipeline 1.4.1-1
+core/ca-certificates 20160507-1
+core/ca-certificates-cacert 20140824-3
+core/ca-certificates-utils 20160507-1
+core/curl 7.49.1-1
+core/libksba 1.3.4-1
+core/libssh2 1.7.0-2
+core/libtasn1 4.8-2
+core/npth 1.2-1
+core/openresolv 3.8.1-1
+core/p11-kit 0.23.2-1
+core/archlinux-keyring 20160402-1
+core/gpgme 1.6.0-2
+core/nettle 3.2-2
+core/pacman-mirrorlist 20160703-1
+core/pinentry 0.9.7-2
+core/sqlite 3.13.0-1
+core/libusb 1.0.20-1
+extra/vim-runtime 7.4.1910-1
+core/gpm 1.20.7-6
+extra/vim 7.4.1910-1
+core/grub 1:2.02.beta2-6
+core/libnl 3.2.27-1
+core/wpa_supplicant 1:2.5-3
+core/net-tools 1.60.20130531git-1
+extra/git 2.9.0-1
+extra/perl-error 0.17024-1
+extra/zsh 5.2-1
+community/fcron 3.2.0-3
+core/mlocate 0.26-5
+core/run-parts 4.7-1
+extra/libevdev 1.5.2-1
+extra/libgudev 230-1
+extra/libinput 1.3.3-1
+extra/libxau 1.0.8-2
+extra/libxcb 1.12-1
+extra/libxdmcp 1.1.2-1
+extra/mtdev 1.1.5-1
+extra/xcb-proto 1.12-2
+extra/xf86-input-evdev 2.10.3-1 (xorg-drivers xorg)
+extra/xf86-input-joystick 1.6.2-6 (xorg-drivers xorg)
+extra/xf86-input-keyboard 1.8.1-2 (xorg-drivers xorg)
+extra/xf86-input-libinput 0.19.0-1 (xorg-drivers xorg)
+extra/xf86-input-mouse 1.9.1-2 (xorg-drivers xorg)
+extra/xproto 7.0.29-1
+extra/damageproto 1.2.1-3
+core/elfutils 0.166-1
+extra/fixesproto 5.0-3
+extra/inputproto 2.3.2-1
+extra/kbproto 1.0.7-1
+extra/libdrm 2.4.68-1
+core/libedit 20160618_3.1-1
+extra/libomxil-bellagio 0.9.3-1
+extra/libpciaccess 0.13.4-1
+extra/libtxc_dxtn 1.0.1-6
+extra/libx11 1.6.3-1
+extra/libxdamage 1.1.4-2
+extra/libxext 1.3.3-1
+extra/libxfixes 5.0.2-1
+extra/libxi 1.7.6-1
+extra/libxml2 2.9.4+0+gbdec218-2
+extra/libxshmfence 1.2-1
+extra/libxtst 1.2.2-1
+extra/libxxf86vm 1.1.4-1
+extra/recordproto 1.14.2-2
+extra/wayland 1.11.0-1
+extra/xextproto 7.3.0-1
+extra/xf86-input-synaptics 1.8.99.1-1 (xorg-drivers xorg)
+extra/xf86-input-vmmouse 13.1.0-2 (xorg-drivers xorg)
+extra/xf86-input-void 1.4.1-2 (xorg-drivers xorg)
+extra/xf86vidmodeproto 2.3.1-3
+extra/llvm-libs 3.8.0-1
+extra/libxv 1.0.10-1
+extra/libxvmc 1.0.9-1
+extra/pixman 0.34.0-1
+extra/videoproto 2.3.3-1
+extra/xcb-util 0.4.0-1
+extra/xf86-video-amdgpu 1.1.0-1 (xorg-drivers xorg)
+extra/xf86-video-ark 0.7.5-7 (xorg-drivers xorg)
+extra/xf86-video-ati 1:7.7.0-1 (xorg-drivers xorg)
+extra/xf86-video-dummy 0.3.7-5 (xorg-drivers xorg)
+extra/xf86-video-fbdev 0.4.4-5 (xorg-drivers xorg)
+extra/xf86-video-glint 1.2.8-7 (xorg-drivers xorg)
+extra/xf86-video-i128 1.3.6-7 (xorg-drivers xorg)
+extra/xf86-video-mach64 6.9.5-2 (xorg-drivers xorg)
+extra/xf86-video-neomagic 1.2.9-2 (xorg-drivers xorg)
+extra/xf86-video-nouveau 1.0.12-1 (xorg-drivers xorg)
+extra/xf86-video-nv 2.1.20-7 (xorg-drivers xorg)
+extra/xf86-video-r128 6.10.1-1 (xorg-drivers xorg)
+extra/xf86-video-savage 2.3.8-2 (xorg-drivers xorg)
+extra/xf86-video-siliconmotion 1.7.8-2 (xorg-drivers xorg)
+extra/fontconfig 2.12.0-1
+extra/fontsproto 2.1.3-1
+extra/graphite 1:1.3.8-1
+extra/harfbuzz 1.2.7-1
+extra/libfontenc 1.1.3-1
+extra/libpng 1.6.23-1
+extra/libxfont 1.5.1-1
+extra/xf86-video-sis 0.10.8-2 (xorg-drivers xorg)
+extra/xf86-video-tdfx 1.4.5-7 (xorg-drivers xorg)
+extra/xf86-video-trident 1.3.7-2 (xorg-drivers xorg)
+extra/xf86-video-vesa 2.3.4-2 (xorg-drivers xorg)
+extra/xf86-video-vmware 13.1.0-3 (xorg-drivers xorg)
+extra/xf86-video-voodoo 1.2.5-7 (xorg-drivers xorg)
+extra/xorg-bdftopcf 1.0.5-1 (xorg xorg-apps)
+extra/xorg-docs 1.7.1-1 (xorg)
+extra/xorg-font-util 1.3.1-1 (xorg-fonts xorg)
+extra/xorg-font-utils 7.6-4
+extra/xorg-fonts-alias 1.0.3-1
+extra/xorg-fonts-encodings 1.0.4-4 (xorg-fonts xorg)
+extra/xorg-mkfontdir 1.0.7-2 (xorg xorg-apps)
+extra/xorg-mkfontscale 1.1.2-1 (xorg-apps xorg)
+extra/xorg-fonts-100dpi 1.0.3-2 (xorg)
+extra/xorg-fonts-75dpi 1.0.3-2 (xorg)
+extra/libepoxy 1.3.1-1
+extra/libice 1.0.9-1
+extra/xorg-iceauth 1.0.7-1 (xorg-apps xorg)
+extra/xorg-luit 1.1.1-2 (xorg xorg-apps)
+extra/libxkbfile 1.0.9-1
+extra/xkeyboard-config 2.18-1
+extra/xorg-fonts-misc 1.0.3-4
+extra/xorg-setxkbmap 1.3.1-1 (xorg-apps xorg)
+extra/xorg-xkbcomp 1.3.1-1 (xorg-apps xorg)
+extra/dri2proto 2.8-2
+extra/glproto 1.4.17-1
+extra/libunwind 1.1-3
+extra/randrproto 1.5.0-1
+extra/renderproto 0.11.1-3
+extra/xf86driproto 2.1.1-3
+extra/cairo 1.14.6-1
+extra/compositeproto 0.4.2-3
+extra/dmxproto 2.3.1-3
+extra/dri3proto 1.0-1
+community/i3-wm 4.12-1 (i3)
+extra/libdatrie 0.2.10-1
+extra/libdmx 1.1.3-1
+community/libev 4.22-1
+extra/libsm 1.2.2-2
+extra/libthai 0.1.24-1
+extra/libxaw 1.0.13-1
+extra/libxcomposite 0.4.4-2
+extra/libxcursor 1.1.14-2
+extra/libxft 2.3.2-1
+extra/libxinerama 1.1.3-2
+extra/libxkbcommon 0.6.1-1
+extra/libxkbcommon-x11 0.6.1-1
+extra/libxmu 1.1.2-1
+extra/libxpm 3.5.11-1
+extra/libxrandr 1.5.0-1
+extra/libxrender 0.9.9-1
+extra/libxt 1.1.5-1
+extra/libxxf86dga 1.1.4-1
+extra/pango 1.40.1-1
+extra/presentproto 1.0-1
+extra/resourceproto 1.2.0-3
+extra/scrnsaverproto 1.2.2-2
+extra/startup-notification 0.12-4
+extra/xcb-util-cursor 0.1.3-1
+extra/xcb-util-image 0.4.0-1
+extra/xcb-util-keysyms 0.4.0-1
+extra/xcb-util-renderutil 0.3.9-1
+extra/xcb-util-wm 0.4.1-1
+extra/xf86dgaproto 2.1-3
+extra/xineramaproto 1.2.1-3
+extra/xorg-sessreg 1.1.0-1 (xorg-apps xorg)
+extra/xorg-smproxy 1.0.6-1 (xorg-apps xorg)
+extra/xorg-util-macros 1.19.0-1
+extra/xorg-x11perf 1.6.0-1 (xorg-apps xorg)
+extra/xorg-xauth 1.0.9-1 (xorg-apps xorg)
+extra/xorg-xbacklight 1.2.1-1 (xorg-apps xorg)
+extra/xorg-xcmsdb 1.0.5-1 (xorg-apps xorg)
+extra/xorg-xcursorgen 1.0.6-1 (xorg-apps xorg)
+extra/xorg-xdpyinfo 1.3.2-1 (xorg-apps xorg)
+extra/xorg-xdriinfo 1.0.5-1 (xorg-apps xorg)
+extra/xorg-xev 1.2.2-1 (xorg-apps xorg)
+extra/xorg-xgamma 1.0.6-1 (xorg-apps xorg)
+extra/xorg-xhost 1.0.7-1 (xorg-apps xorg)
+extra/xorg-xinput 1.6.2-1 (xorg-apps xorg)
+extra/xorg-xkbevd 1.1.4-1 (xorg-apps xorg)
+extra/xorg-xkbutils 1.0.4-2 (xorg-apps xorg)
+extra/xorg-xkill 1.0.4-1 (xorg-apps xorg)
+extra/xorg-xlsatoms 1.1.2-1 (xorg-apps xorg)
+extra/xorg-xlsclients 1.1.3-1 (xorg-apps xorg)
+extra/xorg-xmodmap 1.0.9-1 (xorg-apps xorg)
+extra/xorg-xpr 1.0.4-2 (xorg-apps xorg)
+extra/xorg-xprop 1.2.2-1 (xorg-apps xorg)
+extra/xorg-xrandr 1.5.0-1 (xorg-apps xorg)
+extra/xorg-xrdb 1.1.0-2 (xorg-apps xorg)
+extra/xorg-xrefresh 1.0.5-1 (xorg-apps xorg)
+extra/xorg-xset 1.2.3-1 (xorg-apps xorg)
+extra/xorg-xsetroot 1.1.1-2 (xorg-apps xorg)
+extra/xorg-xvinfo 1.1.3-1 (xorg-apps xorg)
+extra/xorg-xwd 1.0.6-1 (xorg-apps xorg)
+extra/xorg-xwininfo 1.1.3-1 (xorg-apps xorg)
+extra/xorg-xwud 1.0.4-2 (xorg-apps xorg)
+extra/yajl 2.1.0-1
+extra/alsa-lib 1.1.1-1
+community/confuse 2.8-2
+extra/libasyncns 0.8-5
+core/wireless_tools 30.pre9-1
+community/dmenu 4.6-1
+extra/flac 1.3.1-3
+community/i3status 2.10-1 (i3)
+extra/json-c 0.12.1-1
+extra/libogg 1.3.2-1
+extra/libpulse 9.0-1
+extra/libsndfile 1.0.27-1
+extra/libvorbis 1.3.5-1
+extra/xorg-xinit 1.3.4-4
+extra/libutempter 1.1.6-2
+extra/xbitmaps 1.1.1-3
+extra/xterm 325-1
+extra/atk 2.20.0-1
+extra/avahi 0.6.32-2
+extra/libdaemon 0.14-3
+extra/libjpeg-turbo 1.5.0-1
+extra/libtiff 4.0.6-2
+extra/shared-mime-info 1.6-2
+extra/gdk-pixbuf2 2.34.0-2
+extra/gtk-update-icon-cache 3.20.6-1
+extra/gtk2 2.24.30-2
+extra/hicolor-icon-theme 0.15-1
+extra/jasper 1.900.1-15
+extra/libcroco 0.6.11-1
+extra/libcups 2.1.4-1
+extra/librsvg 2:2.40.16-1
+core/nspr 4.12-1
+core/libevent 2.0.22-2
+extra/libexif 0.6.21-2
+extra/libxss 1.2.2-2
+extra/xdg-utils 1.1.1-2
+extra/snappy 1.1.3-2
+extra/dotconf 1.3-4
+extra/libsecret 0.18.5-1
+extra/libvpx 1.5.0-4
+extra/perl-file-basedir 0.07-1
+extra/perl-ipc-system-simple 1.25-1
+extra/python 3.5.2-1
+extra/python-xdg 0.25-3
+extra/speech-dispatcher 0.8.4-2
+extra/chromium 51.0.2704.106-1
+extra/alsa-utils 1.1.1-1
+extra/fftw 3.3.4-2
+extra/libsamplerate 0.1.8-3
+extra/js17 17.0.0-3
+extra/polkit 0.113-4
+extra/libsoxr 0.1.2-1
+extra/orc 0.4.25-2
+extra/rtkit 0.11-5
+extra/sbc 1.3-1
+extra/speexdsp 1.2rc3-2
+extra/webrtc-audio-processing 0.3-1
+extra/pulseaudio 9.0-1
+extra/htop 2.0.1-1
+extra/lsof 4.89-1
+extra/strace 4.12-1
+community/ttf-inconsolata 20151221.480630d-1
+community/tmux 2.2-1
+core/libmpc 1.0.3-2
+extra/clang 3.8.0-1
+extra/dcadec 0.2.0-1
+extra/fribidi 0.19.7-1
+extra/giflib 5.1.4-1
+extra/gsm 1.0.14-1
+extra/hdf5 1.10.0-1
+extra/lame 3.99.5-3
+extra/libass 0.13.2-1
+extra/libavc1394 0.5.4-2
+extra/libbluray 0.9.2-2
+extra/libiec61883 1.2.0-4
+extra/libmodplug 0.8.8.5-2
+extra/libraw1394 2.1.2-1
+extra/libssh 0.7.3-1
+extra/libtheora 1.1.1-3
+extra/libva 1.7.1-1
+extra/libvdpau 1.1.1-2
+extra/libwebp 0.5.0-1
+extra/netcdf 4.4.1rc1-1
+extra/opencore-amr 0.1.3-2
+extra/openjpeg 1.5.2-1
+extra/schroedinger 1.0.11-3
+extra/sdl 1.2.15-7
+extra/speex 1.2rc2-1
+extra/v4l-utils 1.10.1-1
+extra/vid.stab 1.1-1
+extra/xvidcore 1.3.4-1
+extra/libx264 2:148.20160103-1
+extra/x265 1.9-1
+extra/cifs-utils 6.5-1
+extra/enca 1.18-1
+extra/ffmpeg 1:3.0.2-2
+extra/imlib2 1.4.9-1
+extra/jack 0.124.1-6
+extra/lcms2 2.7-1
+extra/ldb 1.1.26-1
+extra/libbsd 0.8.3-1
+extra/libcaca 0.99.beta19-1
+extra/libcap-ng 0.7.7-1
+extra/libcddb 1.3.2-4
+extra/libcdio 0.93-3
+extra/libcdio-paranoia 10.2+0.93+1-2
+extra/libdvdnav 5.0.3-1
+extra/libdvdread 5.0.4-1
+extra/libid3tag 0.15.1b-8
+extra/lua52 5.2.4-1
+extra/recode 3.6-9
+extra/talloc 2.1.7-1
+extra/tevent 0.9.28-1
+extra/zita-alsa-pcmi 0.2.0-3
+extra/zita-resampler 1.3.0-5
+extra/python2 2.7.12-1
+community/mpv 1:0.18.0-1
+extra/rubberband 1.8.1-3
+extra/vamp-plugin-sdk 2.6-1
+archlinuxfr/package-query 1.8-1
+archlinuxfr/yaourt 1.8.1-1
+local/yandex-disk 0.1.5.948-1
+extra/libmng 2.0.3-1
+extra/aspell 0.60.6.1-5
+extra/attica-qt4 0.4.2-3
+extra/dbus-glib 0.106-1
+extra/enchant 1.6.0-8
+extra/hspell 1.3-1
+extra/hunspell 1.4.1-1
+extra/ilmbase 2.2.0-2
+extra/libdbusmenu-qt4 0.9.3+16.04.20160218-1
+extra/libvoikko 4.0.2-1
+extra/polkit-qt4 0.112.0+git20160226-1
+extra/qca-qt4 2.1.1-5
+extra/qt4 4.8.7-9
+extra/docbook-xml 4.5-6
+extra/exiv2 0.25-3
+extra/libxslt 1.1.29-1
+extra/openexr 2.2.0-3
+extra/strigi 0.7.8-9
+extra/cdparanoia 10.2-5
+extra/docbook-xsl 1.79.1-1
+extra/gst-plugins-base 1.8.2-1
+extra/gst-plugins-base-libs 1.8.2-1
+extra/gstreamer 1.8.2-1
+extra/libatasmart 0.19-3
+extra/libimobiledevice 1.2.0-3
+extra/libplist 1.12-4
+extra/libusbmuxd 1.0.10-1
+extra/libvisual 0.4.0-6
+extra/phonon-qt4-gstreamer 4.9.0-1
+extra/udisks2 2.1.7-1
+extra/upower 0.99.4-2
+extra/libqzeitgeist 0.8.0-6
+extra/media-player-info 22-2
+extra/phonon-qt4 4.9.0-1
+extra/qtwebkit 2.3.4-4
+extra/icu 57.1-1
+extra/libcanberra 0.30-6
+extra/libkactivities4 4.13.3-3
+extra/sound-theme-freedesktop 0.8-2
+extra/libakonadi-qt4 1.13.0-9
+extra/libical 2.0.0-2
+extra/qjson 0.8.1-5
+extra/chmlib 0.40-4
+extra/djvulibre 3.5.27-3
+extra/kdepimlibs4 4.14.10-9
+extra/libpaper 1.1.24-9
+extra/qimageblitz 0.0.6-5
+extra/ghostscript 9.19-1
+extra/libkexiv2_4 15.08.3-2
+extra/libkscreen4 1.0.5-2
+extra/poppler 0.42.0-1
+extra/poppler-qt4 0.42.0-1
+extra/xclip 0.12.git.20160201-1
+extra/liblqr 0.4.2-1
+extra/ocl-icd 2.2.9-1
+extra/boost-libs 1.60.0-5
+extra/geoip 1.6.6-2
+extra/geoip-database 20160301-2
+extra/libproxy 0.4.12-2
+extra/libtorrent-rasterbar 1:1.1-2
+extra/qtchooser 53-2
+extra/tslib 1.1-1
+community/qbittorrent 3.3.5-1
+extra/qt5-base 5.7.0-1 (qt qt5)
+community/i3lock 2.8-1 (i3)
+community/task 2.5.1-1
+extra/harfbuzz-icu 1.2.7-1
+extra/openal 1.17.2-2
+local/telegram-desktop-bin 0.9.56-1
+extra/bc 1.06.95-2
+extra/feh 2.16.1-1
+extra/libyaml 0.1.6-1
+extra/ruby 2.3.1-1
+local/ruby-colorize 0.8.1-1
+extra/gc 7.4.2-4
+extra/libatomic_ops 7.4.4-1
+extra/guile 2.0.11-4
+extra/bind-tools 9.10.4.P1-2
+core/dnssec-anchors 20150403-1
+extra/idnkit 1.0-3
+local/ruby-eventmachine 1.2.0.1-2
+local/ruby-em-proxy 0.1.8-1
+local/ruby-net-dns 0.8.0-1
+local/ruby-network_interface 0.0.1-3
+core/libpcap 1.7.4-1
+local/ruby-pcaprub 0.12.4-1
+local/ruby-packetfu 1.1.11-1
+community/ruby-rspec-support 3.5.0-1
+local/ruby-hitimes 1.2.4-1
+local/ruby-timers 4.1.1-2
+local/ruby-celluloid-essentials 0.20.5-2
+local/ruby-celluloid-extras 0.20.5-1
+local/ruby-celluloid-fsm 0.20.5-1
+local/ruby-celluloid-pool 0.20.5-1
+local/ruby-celluloid-supervision 0.20.6-1
+local/ruby-celluloid 0.17.3-1
+local/ruby-nio4r 1.2.1-1
+local/ruby-celluloid-io 0.17.3-1
+local/ruby-celluloid-dns 0.17.3-1
+local/ruby-rubydns 1.0.3.af7984c-2
+local/bettercap-git 1.5.5.803.6de1aaa-1
+community/emacs-nox 24.5-4
+extra/wget 1.18-1
+archlinuxfr/sublime-text-dev 3.3114-1
+community/cgroup_event_listener 4.6-4 (linux-tools)
+community/cpupower 4.6-4 (linux-tools)
+community/libtraceevent 4.6-4 (linux-tools)
+community/audit 2.4.4-1
+community/libnewt 0.52.19-1
+extra/numactl 2.0.11-1
+community/perf 4.6-4 (linux-tools)
+extra/slang 2.3.0-1
+community/tmon 4.6-4 (linux-tools)
+community/turbostat 4.6-4 (linux-tools)
+community/usbip 4.6-4 (linux-tools)
+community/x86_energy_perf_policy 4.6-4 (linux-tools)
+core/links 2.12-2
+community/iperf3 3.1.3-1
+extra/celt0.5.1 0.5.1.3-3
+extra/dconf 0.26.0-1
+extra/libcacard 2.5.2-1
+extra/libgusb 0.2.9-1
+extra/sdl2 2.0.4-2
+community/usbredir 0.7-1
+extra/vde2 2.3.2-8
+extra/colord 1.3.2-2
+extra/at-spi2-atk 2.20.1-2
+extra/at-spi2-core 2.20.2-1
+extra/adwaita-icon-theme 3.20-2 (gnome)
+extra/glib-networking 2.48.2-1
+extra/gsettings-desktop-schemas 3.21.2-1
+extra/json-glib 1.2.0-1
+extra/libsoup 2.54.1-1
+extra/rest 0.8.0-1
+extra/wayland-protocols 1.4-1
+extra/gtk3 3.20.6-1
+extra/jemalloc 4.2.1-1
+extra/virglrenderer 0.5.0-1
+extra/vte-common 0.44.2-1
+extra/vte3 0.44.2-1
+extra/qemu 2.6.0-1
+core/tzdata 2016f-1
+core/ca-certificates-mozilla 3.25-1
+extra/desktop-file-utils 0.23-1
+core/gmp 6.1.1-1
+core/hwids 20160421-1
+core/libffi 3.2.1-2
+core/libsasl 2.1.26-8
+extra/freetype2 2.6.5-2
+core/libgpg-error 1.24-1
+extra/libmnl 1.0.4-1
+core/pam 1.3.0-1
+core/libassuan 2.4.3-1
+core/gnupg 2.1.14-1
+core/gnutls 3.4.14-1
+extra/imagemagick 6.9.5.2-1
+extra/libwbclient 4.4.5-1
+extra/tdb 1.3.9-1
+extra/smbclient 4.4.5-1
+extra/oxygen-icons 1:5.24.0-1 (kf5)
+extra/mesa 12.0.1-1
+extra/mesa-libgl 12.0.1-1
+core/nss 3.25-1
+extra/opus 1.1.3-2
+extra/kdelibs 4.14.22-1
+extra/kdebase-runtime 16.04.3-1
+extra/libspectre 0.2.8-1
+extra/kdegraphics-okular 16.04.3-1 (kde-applications kdegraphics)
+core/libarchive 3.2.1-2
+extra/libwacom 0.21-1
+core/mkinitcpio 20-1
+core/thin-provisioning-tools 0.6.2-1
+community/ruby-rspec-core 3.5.1-1
+extra/seabios 1.9.3-1
+extra/spice 0.12.8-1
+extra/xf86-video-intel 1:2.99.917+676+g26f8ab5-1 (xorg-drivers xorg)
+extra/xf86-video-openchrome 0.5.0-1 (xorg-drivers xorg)
+extra/xorg-server 1.18.3-3 (xorg)
+extra/xorg-server-common 1.18.3-3 (xorg)
+extra/xorg-server-devel 1.18.3-3 (xorg)
+extra/xorg-server-xdmx 1.18.3-3 (xorg)
+extra/xorg-server-xephyr 1.18.3-3 (xorg)
+extra/xorg-server-xnest 1.18.3-3 (xorg)
+extra/xorg-server-xvfb 1.18.3-3 (xorg)
+extra/xorg-server-xwayland 1.18.3-3 (xorg)
+extra/jsoncpp 1.7.3-2
+extra/libvncserver 0.9.10-4
+local/aqemu 0.9.2-1
+extra/cmake 3.5.2-2
+core/ldns 1.6.17-4
+core/openssh 7.2p2-2
+local/ruby-colorator 0.1-1
+local/ruby-maruku 0.7.2-3
+local/ruby-yard 0.8.7.6-1
+local/ruby-sass 3.4.22-1
+local/ruby-jekyll-sass-converter 1.4.0-1
+local/ruby-rb-fsevent 0.9.7-1
+local/ruby-ffi 1.9.10-1
+local/ruby-rb-inotify 0.9.5-1
+local/ruby-listen 3.0.5-1
+local/ruby-jekyll-watch 1.3.1-1
+local/ruby-kramdown 1.10.0-1
+local/ruby-liquid-3 3.0.6-1
+local/ruby-mercenary 0.3.5-1
+local/ruby-rouge 1.11.1-1
+local/ruby-safe_yaml 1.0.4-1
+local/ruby-jekyll 3.1.2-1
+local/ruby-jekyll-paginate 1.1.0-1
+community/ttf-droid 20121017-4
+extra/ttf-dejavu 2.35-1
+extra/bluez-libs 5.41-1
+community/pass 1.6.5-2
+community/pwgen 2.07-1
+extra/tree 1.7.0-1
+core/filesystem 2015.09-1 (base)
+core/glibc 2.23-5 (base)
+core/bash 4.3.046-1 (base)
+core/bzip2 1.0.6-5 (base)
+core/gcc-libs 6.1.1-3 (base)
+core/coreutils 8.25-2 (base)
+core/e2fsprogs 1.43.1-1 (base)
+core/perl 5.24.0-1 (base)
+core/cryptsetup 1.7.2-1 (base)
+core/device-mapper 2.02.160-2 (base)
+core/dhcpcd 6.11.1-1 (base)
+core/diffutils 3.3-3 (base)
+core/less 481-2 (base)
+core/shadow 4.2.1-3 (base)
+core/inetutils 1.9.4-2 (base)
+core/iproute2 4.5.0-2 (base)
+core/iputils 20160308.0db72a4-1 (base)
+core/jfsutils 1.1.15-4 (base)
+core/licenses 20140629-1 (base)
+core/sysfsutils 2.1.0-9 (base)
+core/logrotate 3.9.2-1 (base)
+core/lvm2 2.02.160-2 (base)
+core/man-db 2.7.5-2 (base)
+core/man-pages 4.06-1 (base)
+core/mdadm 3.4-1 (base)
+core/nano 2.6.1-1 (base)
+core/netctl 1.12-2 (base)
+core/pciutils 3.5.1-1 (base)
+core/pcmciautils 018-7 (base)
+core/procps-ng 3.3.12-1 (base)
+core/psmisc 22.21-3 (base)
+core/reiserfsprogs 3.6.25-1 (base)
+core/s-nail 14.8.9-1 (base)
+core/systemd-sysvcompat 230-5 (base)
+core/tar 1.29-1 (base)
+core/usbutils 008-1 (base)
+core/vi 1:070224-2 (base)
+core/xfsprogs 4.5.0-1 (base)
+core/linux 4.6.4-1 (base)
+extra/linux-zen 4.6.4-1
+core/gawk 4.1.3-1 (base base-devel)
+core/autoconf 2.69-3 (base-devel)
+core/automake 1.15-1 (base-devel)
+core/m4 1.4.17-2 (base-devel)
+core/binutils 2.26.1-1 (base-devel)
+core/bison 3.0.4-2 (base-devel)
+core/sed 4.2.2-4 (base base-devel)
+core/fakeroot 1.21-1 (base-devel)
+core/file 5.28-1 (base base-devel)
+core/util-linux 2.28-1 (base base-devel)
+core/findutils 4.6.0-1 (base base-devel)
+core/flex 2.6.0-3 (base-devel)
+core/gcc 6.1.1-3 (base-devel)
+core/gettext 0.19.8.1-2 (base base-devel)
+core/grep 2.25-2 (base base-devel)
+core/groff 1.22.3-6 (base-devel)
+core/gzip 1.8-2 (base base-devel)
+core/libtool 2.4.6-5 (base-devel)
+core/make 4.2.1-1 (base-devel)
+core/pacman 5.0.1-4 (base base-devel)
+core/patch 2.7.5-1 (base-devel)
+core/pkg-config 0.29.1-1 (base-devel)
+core/sudo 1.8.17.p1-1 (base-devel)
+core/texinfo 6.1-4 (base base-devel)
+core/which 2.21-2 (base base-devel)
+local/xf86-input-mtrack 0.3.1-1
+local/vundle 0.10.2-1
+community/cargo 0.11.0-1
+community/rust 1:1.10.0-1
+community/ghc 8.0.1-1
+local/vim-gruvbox-git latest-2 (vim-plugins)
+local/vim-cpp-enhanced-highlight-git r61.f4351ba-1
