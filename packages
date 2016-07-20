@@ -1,203 +1,218 @@
-extra/vim 7.4.1910-1
-core/grub 1:2.02.beta2-6
-core/wpa_supplicant 1:2.5-3
-core/net-tools 1.60.20130531git-1
-extra/git 2.9.0-1
-extra/zsh 5.2-1
-community/fcron 3.2.0-3
-core/mlocate 0.26-5
-extra/xf86-input-evdev 2.10.3-1 (xorg-drivers xorg)
-extra/xf86-input-joystick 1.6.2-6 (xorg-drivers xorg)
-extra/xf86-input-keyboard 1.8.1-2 (xorg-drivers xorg)
-extra/xf86-input-libinput 0.19.0-1 (xorg-drivers xorg)
-extra/xf86-input-mouse 1.9.1-2 (xorg-drivers xorg)
-extra/xf86-input-synaptics 1.8.99.1-1 (xorg-drivers xorg)
-extra/xf86-input-vmmouse 13.1.0-2 (xorg-drivers xorg)
-extra/xf86-input-void 1.4.1-2 (xorg-drivers xorg)
-extra/xf86-video-amdgpu 1.1.0-1 (xorg-drivers xorg)
-extra/xf86-video-ark 0.7.5-7 (xorg-drivers xorg)
-extra/xf86-video-ati 1:7.7.0-1 (xorg-drivers xorg)
-extra/xf86-video-dummy 0.3.7-5 (xorg-drivers xorg)
-extra/xf86-video-fbdev 0.4.4-5 (xorg-drivers xorg)
-extra/xf86-video-glint 1.2.8-7 (xorg-drivers xorg)
-extra/xf86-video-i128 1.3.6-7 (xorg-drivers xorg)
-extra/xf86-video-mach64 6.9.5-2 (xorg-drivers xorg)
-extra/xf86-video-neomagic 1.2.9-2 (xorg-drivers xorg)
-extra/xf86-video-nouveau 1.0.12-1 (xorg-drivers xorg)
-extra/xf86-video-nv 2.1.20-7 (xorg-drivers xorg)
-extra/xf86-video-r128 6.10.1-1 (xorg-drivers xorg)
-extra/xf86-video-savage 2.3.8-2 (xorg-drivers xorg)
-extra/xf86-video-siliconmotion 1.7.8-2 (xorg-drivers xorg)
-extra/xf86-video-sis 0.10.8-2 (xorg-drivers xorg)
-extra/xf86-video-tdfx 1.4.5-7 (xorg-drivers xorg)
-extra/xf86-video-trident 1.3.7-2 (xorg-drivers xorg)
-extra/xf86-video-vesa 2.3.4-2 (xorg-drivers xorg)
-extra/xf86-video-vmware 13.1.0-3 (xorg-drivers xorg)
-extra/xf86-video-voodoo 1.2.5-7 (xorg-drivers xorg)
-extra/xorg-bdftopcf 1.0.5-1 (xorg xorg-apps)
-extra/xorg-docs 1.7.1-1 (xorg)
-extra/xorg-font-util 1.3.1-1 (xorg-fonts xorg)
-extra/xorg-fonts-encodings 1.0.4-4 (xorg-fonts xorg)
-extra/xorg-mkfontdir 1.0.7-2 (xorg xorg-apps)
-extra/xorg-mkfontscale 1.1.2-1 (xorg-apps xorg)
-extra/xorg-fonts-100dpi 1.0.3-2 (xorg)
-extra/xorg-fonts-75dpi 1.0.3-2 (xorg)
-extra/xorg-iceauth 1.0.7-1 (xorg-apps xorg)
-extra/xorg-luit 1.1.1-2 (xorg xorg-apps)
-extra/xorg-setxkbmap 1.3.1-1 (xorg-apps xorg)
-extra/xorg-xkbcomp 1.3.1-1 (xorg-apps xorg)
-community/i3-wm 4.12-1 (i3)
-extra/xorg-sessreg 1.1.0-1 (xorg-apps xorg)
-extra/xorg-smproxy 1.0.6-1 (xorg-apps xorg)
-extra/xorg-x11perf 1.6.0-1 (xorg-apps xorg)
-extra/xorg-xauth 1.0.9-1 (xorg-apps xorg)
-extra/xorg-xbacklight 1.2.1-1 (xorg-apps xorg)
-extra/xorg-xcmsdb 1.0.5-1 (xorg-apps xorg)
-extra/xorg-xcursorgen 1.0.6-1 (xorg-apps xorg)
-extra/xorg-xdpyinfo 1.3.2-1 (xorg-apps xorg)
-extra/xorg-xdriinfo 1.0.5-1 (xorg-apps xorg)
-extra/xorg-xev 1.2.2-1 (xorg-apps xorg)
-extra/xorg-xgamma 1.0.6-1 (xorg-apps xorg)
-extra/xorg-xhost 1.0.7-1 (xorg-apps xorg)
-extra/xorg-xinput 1.6.2-1 (xorg-apps xorg)
-extra/xorg-xkbevd 1.1.4-1 (xorg-apps xorg)
-extra/xorg-xkbutils 1.0.4-2 (xorg-apps xorg)
-extra/xorg-xkill 1.0.4-1 (xorg-apps xorg)
-extra/xorg-xlsatoms 1.1.2-1 (xorg-apps xorg)
-extra/xorg-xlsclients 1.1.3-1 (xorg-apps xorg)
-extra/xorg-xmodmap 1.0.9-1 (xorg-apps xorg)
-extra/xorg-xpr 1.0.4-2 (xorg-apps xorg)
-extra/xorg-xprop 1.2.2-1 (xorg-apps xorg)
-extra/xorg-xrandr 1.5.0-1 (xorg-apps xorg)
-extra/xorg-xrdb 1.1.0-2 (xorg-apps xorg)
-extra/xorg-xrefresh 1.0.5-1 (xorg-apps xorg)
-extra/xorg-xset 1.2.3-1 (xorg-apps xorg)
-extra/xorg-xsetroot 1.1.1-2 (xorg-apps xorg)
-extra/xorg-xvinfo 1.1.3-1 (xorg-apps xorg)
-extra/xorg-xwd 1.0.6-1 (xorg-apps xorg)
-extra/xorg-xwininfo 1.1.3-1 (xorg-apps xorg)
-extra/xorg-xwud 1.0.4-2 (xorg-apps xorg)
-community/dmenu 4.6-1
-community/i3status 2.10-1 (i3)
-extra/xorg-xinit 1.3.4-4
-extra/xterm 325-1
-extra/chromium 51.0.2704.106-1
-extra/alsa-utils 1.1.1-1
-extra/pulseaudio 9.0-1
-extra/htop 2.0.1-1
-extra/lsof 4.89-1
-extra/strace 4.12-1
-community/ttf-inconsolata 20151221.480630d-1
-community/tmux 2.2-1
-extra/clang 3.8.0-1
-community/mpv 1:0.18.0-1
-archlinuxfr/yaourt 1.8.1-1
-local/yandex-disk 0.1.5.948-1
-extra/xclip 0.12.git.20160201-1
-community/qbittorrent 3.3.5-1
-community/i3lock 2.8-1 (i3)
-community/task 2.5.1-1
-local/telegram-desktop-bin 0.9.56-1
-extra/bc 1.06.95-2
-extra/feh 2.16.1-1
-extra/bind-tools 9.10.4.P1-2
-local/bettercap-git 1.5.5.803.6de1aaa-1
-community/emacs-nox 24.5-4
-extra/wget 1.18-1
-archlinuxfr/sublime-text-dev 3.3114-1
-community/cgroup_event_listener 4.6-4 (linux-tools)
-community/cpupower 4.6-4 (linux-tools)
-community/libtraceevent 4.6-4 (linux-tools)
-community/perf 4.6-4 (linux-tools)
-community/tmon 4.6-4 (linux-tools)
-community/turbostat 4.6-4 (linux-tools)
-community/usbip 4.6-4 (linux-tools)
-community/x86_energy_perf_policy 4.6-4 (linux-tools)
-core/links 2.12-2
-community/iperf3 3.1.3-1
-extra/qemu 2.6.0-1
-extra/imagemagick 6.9.5.2-1
-extra/kdegraphics-okular 16.04.3-1 (kde-applications kdegraphics)
-extra/xf86-video-intel 1:2.99.917+676+g26f8ab5-1 (xorg-drivers xorg)
-extra/xf86-video-openchrome 0.5.0-1 (xorg-drivers xorg)
-extra/xorg-server 1.18.3-3 (xorg)
-extra/xorg-server-common 1.18.3-3 (xorg)
-extra/xorg-server-devel 1.18.3-3 (xorg)
-extra/xorg-server-xdmx 1.18.3-3 (xorg)
-extra/xorg-server-xephyr 1.18.3-3 (xorg)
-extra/xorg-server-xnest 1.18.3-3 (xorg)
-extra/xorg-server-xvfb 1.18.3-3 (xorg)
-extra/xorg-server-xwayland 1.18.3-3 (xorg)
-local/aqemu 0.9.2-1
-core/openssh 7.2p2-2
-local/ruby-jekyll 3.1.2-1
-local/ruby-jekyll-paginate 1.1.0-1
-extra/ttf-dejavu 2.35-1
-community/pass 1.6.5-2
-core/filesystem 2015.09-1 (base)
-core/glibc 2.23-5 (base)
-core/bash 4.3.046-1 (base)
-core/bzip2 1.0.6-5 (base)
-core/gcc-libs 6.1.1-3 (base)
-core/coreutils 8.25-2 (base)
-core/e2fsprogs 1.43.1-1 (base)
-core/perl 5.24.0-1 (base)
-core/cryptsetup 1.7.2-1 (base)
-core/device-mapper 2.02.160-2 (base)
-core/dhcpcd 6.11.1-1 (base)
-core/diffutils 3.3-3 (base)
-core/less 481-2 (base)
-core/shadow 4.2.1-3 (base)
-core/inetutils 1.9.4-2 (base)
-core/iproute2 4.5.0-2 (base)
-core/iputils 20160308.0db72a4-1 (base)
-core/jfsutils 1.1.15-4 (base)
-core/licenses 20140629-1 (base)
-core/sysfsutils 2.1.0-9 (base)
-core/logrotate 3.9.2-1 (base)
-core/lvm2 2.02.160-2 (base)
-core/man-db 2.7.5-2 (base)
-core/man-pages 4.06-1 (base)
-core/mdadm 3.4-1 (base)
-core/nano 2.6.1-1 (base)
-core/netctl 1.12-2 (base)
-core/pciutils 3.5.1-1 (base)
-core/pcmciautils 018-7 (base)
-core/procps-ng 3.3.12-1 (base)
-core/psmisc 22.21-3 (base)
-core/reiserfsprogs 3.6.25-1 (base)
-core/s-nail 14.8.9-1 (base)
-core/systemd-sysvcompat 230-5 (base)
-core/tar 1.29-1 (base)
-core/usbutils 008-1 (base)
-core/vi 1:070224-2 (base)
-core/xfsprogs 4.5.0-1 (base)
-core/linux 4.6.4-1 (base)
-extra/linux-zen 4.6.4-1
-core/gawk 4.1.3-1 (base base-devel)
-core/autoconf 2.69-3 (base-devel)
-core/automake 1.15-1 (base-devel)
-core/m4 1.4.17-2 (base-devel)
-core/bison 3.0.4-2 (base-devel)
-core/sed 4.2.2-4 (base base-devel)
-core/file 5.28-1 (base base-devel)
-core/util-linux 2.28-1 (base base-devel)
-core/findutils 4.6.0-1 (base base-devel)
-core/flex 2.6.0-3 (base-devel)
-core/gettext 0.19.8.1-2 (base base-devel)
-core/grep 2.25-2 (base base-devel)
-core/gzip 1.8-2 (base base-devel)
-core/make 4.2.1-1 (base-devel)
-core/pacman 5.0.1-4 (base base-devel)
-core/patch 2.7.5-1 (base-devel)
-core/pkg-config 0.29.1-1 (base-devel)
-core/sudo 1.8.17.p1-1 (base-devel)
-core/texinfo 6.1-4 (base base-devel)
-core/which 2.21-2 (base base-devel)
-local/xf86-input-mtrack 0.3.1-1
-local/vundle 0.10.2-1
-community/cargo 0.11.0-1
-community/rust 1:1.10.0-1
-community/ghc 8.0.1-1
-local/vim-gruvbox-git latest-2 (vim-plugins)
-local/vim-cpp-enhanced-highlight-git r61.f4351ba-1
+vim
+grub
+wpa_supplicant
+net-tools
+git
+zsh
+fcron
+mlocate
+xf86-input-evdev
+xf86-input-joystick
+xf86-input-keyboard
+xf86-input-libinput
+xf86-input-mouse
+xf86-input-synaptics
+xf86-input-vmmouse
+xf86-input-void
+xf86-video-amdgpu
+xf86-video-ark
+xf86-video-ati
+xf86-video-dummy
+xf86-video-fbdev
+xf86-video-glint
+xf86-video-i128
+xf86-video-mach64
+xf86-video-neomagic
+xf86-video-nouveau
+xf86-video-nv
+xf86-video-r128
+xf86-video-savage
+xf86-video-siliconmotion
+xf86-video-sis
+xf86-video-tdfx
+xf86-video-trident
+xf86-video-vesa
+xf86-video-vmware
+xf86-video-voodoo
+xorg-bdftopcf
+xorg-docs
+xorg-font-util
+xorg-fonts-encodings
+xorg-mkfontdir
+xorg-mkfontscale
+xorg-fonts-100dpi
+xorg-fonts-75dpi
+xorg-iceauth
+xorg-luit
+xorg-setxkbmap
+xorg-xkbcomp
+i3-wm
+xorg-sessreg
+xorg-smproxy
+xorg-x11perf
+xorg-xauth
+xorg-xbacklight
+xorg-xcmsdb
+xorg-xcursorgen
+xorg-xdpyinfo
+xorg-xdriinfo
+xorg-xev
+xorg-xgamma
+xorg-xhost
+xorg-xinput
+xorg-xkbevd
+xorg-xkbutils
+xorg-xkill
+xorg-xlsatoms
+xorg-xlsclients
+xorg-xmodmap
+xorg-xpr
+xorg-xprop
+xorg-xrandr
+xorg-xrdb
+xorg-xrefresh
+xorg-xset
+xorg-xsetroot
+xorg-xvinfo
+xorg-xwd
+xorg-xwininfo
+xorg-xwud
+dmenu
+i3status
+xorg-xinit
+xterm
+chromium
+alsa-utils
+pulseaudio
+htop
+lsof
+strace
+ttf-inconsolata
+tmux
+clang
+yaourt
+yandex-disk
+xclip
+qbittorrent
+i3lock
+task
+telegram-desktop-bin
+bc
+feh
+bettercap-git
+emacs-nox
+wget
+sublime-text-dev
+cgroup_event_listener
+cpupower
+libtraceevent
+perf
+tmon
+turbostat
+usbip
+x86_energy_perf_policy
+links
+iperf3
+qemu
+imagemagick
+kdegraphics-okular
+xf86-video-intel
+xf86-video-openchrome
+xorg-server
+xorg-server-common
+xorg-server-devel
+xorg-server-xdmx
+xorg-server-xephyr
+xorg-server-xnest
+xorg-server-xvfb
+xorg-server-xwayland
+aqemu
+openssh
+ruby-jekyll
+ruby-jekyll-paginate
+ttf-dejavu
+pass
+filesystem
+glibc
+bash
+bzip2
+gcc-libs
+coreutils
+e2fsprogs
+perl
+cryptsetup
+device-mapper
+dhcpcd
+diffutils
+less
+shadow
+inetutils
+iproute2
+iputils
+jfsutils
+licenses
+sysfsutils
+logrotate
+lvm2
+man-db
+man-pages
+mdadm
+nano
+netctl
+pciutils
+pcmciautils
+procps-ng
+psmisc
+reiserfsprogs
+s-nail
+tar
+usbutils
+vi
+xfsprogs
+linux
+linux-zen
+gawk
+autoconf
+automake
+m4
+bison
+sed
+file
+util-linux
+findutils
+flex
+gettext
+grep
+gzip
+make
+pacman
+patch
+pkg-config
+sudo
+texinfo
+which
+xf86-input-mtrack
+vundle
+cargo
+rust
+ghc
+vim-gruvbox-git
+vim-cpp-enhanced-highlight-git
+vim-tomorrow-theme-git
+vim-base16-git
+vim-seti
+vim-colorsamplerpack
+vim-jellybeans
+vim-molokai
+vim-apprentice
+vim-colorscheme-mustang
+vim-gotham-git
+vim-badwolf-git
+servo-latest
+vim-airline
+vim-airline-themes
+libtinfo
+ycm-generator-git
+bind-tools
+mpv
+systemd-sysvcompat
