@@ -3,6 +3,7 @@
 	name = Ilya
 [core]
 	editor = /usr/bin/vim
+	excludesfile = /home/d/.gitignoreglobal
 
 [alias]
     ci = commit -v
