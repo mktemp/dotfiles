@@ -230,8 +230,11 @@ set exrc
 colorscheme jellybeans  " + molokai, badwolf
 "set t_Co=256  "256 colors mode, not using it
 autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
+au BufNewFile * start
 set title
 set display=lastline,uhex
+set incsearch  
+set autoread  " works in tmux only with vim-tmux-focus-events
 
 " For mouse drag&dropping
 set mouse+=a
@@ -240,20 +243,37 @@ if &term =~ '^screen'
     set ttymouse=xterm2
 endif
 
-" Hotkeys
-imap <t_k8> <ESC>:w<CR>
-nmap <t_k8> :w<CR>
+"" Bindings
 
-imap <F9> <C-o>:set wrap!<CR>
-nmap <F9> :set wrap!<CR>
+" Invoke shell
+inoremap <F4> <C-o>:shell<CR>
+nnoremap <F4>      :shell<CR>
 
-nmap ,t :tabnew<CR>
-"nmap <C-Tab> gt
-"nmap <C-S-Tab> gT
-"FIXME why meta key does not work?
-"map <M-1> 1gt
-"map <M-2> 2gt
-"map <M-3> 3gt
+" Compile're & run're
+imap <F5> <ESC><F7>:exec (len(getqflist()) == 0) ? "call feedkeys(\"\<F6>\")" : "" <CR>
+nmap <F5>      <F7>:exec (len(getqflist()) == 0) ? "call feedkeys(\"\<F6>\")" : "" <CR>
+
+" Run
+inoremap <F6> <C-o>:!echo -ne "\\n\| executing '%:t:r.bin' \|" && cd %:h && %:t:r.bin<CR>
+nnoremap <F6>      :!echo -ne "\\n\| executing '%:t:r.bin' \|" && cd %:h && %:t:r.bin<CR>
+
+" Save're & compile
+set makeprg=clang++\ -std=c++11\ -Weverything\ -Wno-c++98-compat\ -Wno-c++98-compat-pedantic\ %\ -o\ %:r.bin
+set errorformat=%f:%l:%c:\ %trror:\ %m
+imap <F7> <ESC><F8>:silent! exec "!echo -ne '\\n\| compiling \'%:t\' \|'" \| silent! make \| redraw! \| try \| clist \| catch \| echo "> compiling completed" \| endtry <CR>
+nmap <F7>      <F8>:silent! exec "!echo -ne '\\n\| compiling \'%:t\' \|'" \| silent! make \| redraw! \| try \| clist \| catch \| echo "> compiling completed" \| endtry <CR>
+
+" Save
+inoremap <F8> <ESC>:w<CR>
+nnoremap <F8>      :w<CR>
+
+" Toggle wrapping
+inoremap <F9> <C-o>:set wrap!<CR>
+nnoremap <F9>      :set wrap!<CR>
+
+nnoremap mi :try \| lnext \| catch \| lfirst \| endtry<CR>
+nnoremap mo :try \| lprev \| catch \| llast  \| endtry<CR>
+nnoremap mf :YcmCompleter FixIt<CR>
 
 "" Keys workarounds
 " Navigation within a wrapped line
@@ -279,7 +299,7 @@ inoremap <Up> <C-o>gk
 inoremap <Home> <C-o>g<Home>
 inoremap <End>  <C-o>g<End>
 
-" Do not unindent empty lines 
+" Do not unindent empty lines
 inoremap <CR> <CR>x<BS>
 nnoremap o ox<BS>
 nnoremap O Ox<BS>
@@ -330,7 +350,7 @@ cmap ЙЦ1 wq!
 
 filetype detect
 if &ft == "cpp" || &ft == "c"
-  set matchpairs+=<:> 
+  set matchpairs+=<:>
 endif
 
 "TODO
@@ -348,7 +368,7 @@ endif
 "       https://habrahabr.ru/post/102373/#comment_3181848
 "8.  Better parens/braces/brackets/quotes autocompletion (this one does not recognize ^W); Surrounding
 "9.  Insertion with no crazy autoindentation
-"10. Syntax-based blocks folding 
+"10. Syntax-based blocks folding
 "11. Semantic and keywords based autocompletion (C++ at least, Python ideally)
 "12. No softtab unindentation after any non-space symbols
 "13. Look at abilities of git integration plugins
@@ -361,7 +381,7 @@ endif
 "18. For sport programming, write a plugin that adds the three comment lines to the file:
 "    a. creation time
 "    b. last saving time
-"    c. diff 
+"    c. diff
 
 " newline
 
@@ -380,9 +400,15 @@ let g:clang_debug=1
 let g:clang_complete_copen=1
 let g:clang_complete_macros=1
 let g:clang_complete_patterns=0
+let g:ycm_allow_changing_updatetime = 0
 let g:clang_memory_percent=70
 let g:clang_user_options=' || exit 0'
+let g:ycm_confirm_extra_conf=0
+let g:ycm_auto_trigger=0
+let g:ycm_enable_diagnostic_signs=0
+let g:ycm_always_populate_location_list=1
 set previewheight=1
+set pumheight=1
 set completeopt=menu,longest
 map <F2> <C-]>
 "imap <C-Space> <C-X><C-U>
@@ -390,7 +416,7 @@ map <F2> <C-]>
 " Supertab settings
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
-""call vundle#rc()
+call vundle#rc()
 ""Plugin 'auto-pairs'
 ""Plugin 'delimitMate'  " maybe it could be configured well.
 "Plugin 'tabular'
@@ -398,7 +424,10 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 ""Plugin 'clang_complete'
 "Plugin 'vim-inccomplete'
 "Plugin 'supertab'
-""Plugin 'YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tmux-plugins/vim-tmux-focus-events'  " focus-events should be set to on in .tmux.conf
+"Plugin 'svermeulen/vim-easyclip'
 
 filetype plugin indent on  "what is this?
 
