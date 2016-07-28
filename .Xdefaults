@@ -10,7 +10,7 @@ XTerm*termName: xterm-256color
 XTerm*metaSendsEscape: true
 XTerm*fastScroll: true
 XTerm*faceName: Droid Sans Mono
-XTerm*faceSize: 13.4
+XTerm*faceSize: 15
 XTerm*locale: true
 XTerm*scrollBar: false
 XTerm*scrollTtyOutput: false
@@ -23,13 +23,14 @@ UXTerm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48,35:48
 UXTerm*termName: xterm-256color
 UXTerm*metaSendsEscape: true
 UXTerm*fastScroll: true
-UXTerm*faceName: Droid Sans Mono
-UXTerm*faceSize: 14
+UXterm*faceName: Droid Sans Mono:size=13.4:antialias=true
+UXterm*font: 7x13
+UXTerm*faceSize: 16
 UXTerm*locale: true
 UXTerm*scrollBar: false
 UXTerm*scrollTtyOutput: false
 
-# thank you http://www.ibb.net/~anne/keyboard.html
+! thank you http://www.ibb.net/~anne/keyboard.html
 *VT100.Translations: #override \
     <Key>BackSpace: string(0x7F)\n\
     <Key>Delete:    string("\033[3~")\n\
@@ -87,3 +88,32 @@ UXTerm*scrollTtyOutput: false
 ! URxvt*boldItalicFont:       xft:monaco:bold:italic:size=11
 ! URxvt*font:                 xft:DejaVu Sans Mono:pixelsize=13
 ! URxvt*font:                 xft:Droid Sans Mono:bold:pixelsize=16
+
+! !Jellybeans Terminal Colors
+! !=======================================
+! jellybeans*background: #151515
+! jellybeans*foreground: #888888
+! ! Black
+! jellybeans*color0: #1C1C1C
+! jellybeans*color8: #404040
+! ! Red
+! jellybeans*color1: #B85335
+! jellybeans*color9: #CF6A4C
+! ! Green
+! jellybeans*color2: #799D6A
+! jellybeans*color10: #99AD6A
+! ! Yellow
+! jellybeans*color3: #FFB964
+! jellybeans*color11: #FAD07A
+! ! Blue
+! jellybeans*color4: #667899
+! jellybeans*color12: #8197BF
+! ! Magenta
+! jellybeans*color5: #8787AF
+! jellybeans*color13: #C6B6EE
+! ! Cyan
+! jellybeans*color6: #668799
+! jellybeans*color14: #8FBFDC
+! ! White
+! jellybeans*color7: #888888
+! jellybeans*color15: #E8E8D3
