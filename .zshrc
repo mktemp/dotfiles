@@ -63,15 +63,13 @@ alias R="R --quiet"
 alias nbook="jupyter-notebook"
 upgrd() {
     tmpfile=$(mktemp)
-    yaourt -Su 1>&1 1>$tmpfile
+    script -c 'yaourt -Su --color' $tmpfile
+    
     upgraded=$(cat $tmpfile | grep upgrading | tail -n 1 | cut -d / -f 1 | cut -d '(' -f 2)
     if [[ -z $upgraded ]] return
+        
     difference=$(( $_to_be_upgraded - $upgraded ))
-    if [[ 0 -lt $difference ]]; then
-        echo $difference > /usr/local/share/sysautoupdate/count
-    else
-        echo > /usr/local/share/sysautoupdate/count
-    fi
+    echo $difference > /usr/local/share/sysautoupdate/count
 }
 
 # do a du -hs on each dir on current path
@@ -117,9 +115,9 @@ git_number_of_unpushed_commits() {
 }
 git_any_modifications() { 
     if [[ -n "$(git diff 2>/dev/null)" ]]; then
-        echo '\e[31m*'  # red
+        echo -n '\e[31m*'  # red
     elif [[ -n "$(git diff $(tmp=$(git_branch); echo ${tmp:1}) 2>/dev/null)" ]]; then
-        echo '\e[37m*'  # black
+        echo -n '\e[37m*'  # black
     fi
 }
 
@@ -166,6 +164,9 @@ PATH="$PATH\
 :$HOME/repos/metasploit-framework\
 "
 
+EDITOR="/usr/bin/vim"
+VISUAL="/usr/bin/vim"
+
 # TODO
 # 0. Clear the whole structure
 # 1. Prompt color resetting
@@ -177,13 +178,13 @@ PATH="$PATH\
 # 8. Make ^W removing non-letter characters if there're no more letters in the string
 # 9. Cross-language correction
 
-tmux attach -t base 2>/dev/null || tmux new -s base 2>/dev/null || true
+if [[ -z ${TMUX} ]] tmux new 2> /dev/null || true
 
 _to_be_upgraded=$(cat /usr/local/share/sysautoupdate/count)
 if [[ -n "$_to_be_upgraded" ]]; then
     if [[ 1 -lt "$_to_be_upgraded" ]]; then
         echo "\e[1m"$_to_be_upgraded"\e[m" packages are available for upgrade
-    else
+    elif [[ 1 -eq "$_to_be_upgraded" ]]; then
         echo "\e[1m"$_to_be_upgraded"\e[m" package is available for upgrade
     fi
 fi
