@@ -229,12 +229,15 @@ set secure
 set exrc
 colorscheme jellybeans  " + molokai, badwolf
 "set t_Co=256  "256 colors mode, not using it
-autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
+autocmd BufReadPost,FileReadPost,BufNewFile,BufEnter * call system("tmux rename-window 'vim: " . expand("%:t") . "'")
+autocmd VimLeave,FocusLost * call system("tmux setw automatic-rename")
+autocmd FocusLost * exec "try | w | catch | echom '' | endtry"
 au BufNewFile * start
 set title
 set display=lastline,uhex
 set incsearch  
 set autoread  " works in tmux only with vim-tmux-focus-events
+set updatetime=500
 
 " For mouse drag&dropping
 set mouse+=a
@@ -250,18 +253,19 @@ inoremap <F4> <C-o>:shell<CR>
 nnoremap <F4>      :shell<CR>
 
 " Compile're & run're
-imap <F5> <ESC><F7>:exec (len(getqflist()) == 0) ? "call feedkeys(\"\<F6>\")" : "" <CR>
+" FIXME: unwanted keypress occurs after <F6> execution
+imap <F5> <ESC><F7>:exec (len(getqflist()) == 0) ? "call feedkeys(\"\<F6>\")" : "" <CR>  
 nmap <F5>      <F7>:exec (len(getqflist()) == 0) ? "call feedkeys(\"\<F6>\")" : "" <CR>
 
 " Run
-inoremap <F6> <C-o>:!echo -ne "\\n\| executing '%:t:r.bin' \|" && cd %:h && %:t:r.bin<CR>
-nnoremap <F6>      :!echo -ne "\\n\| executing '%:t:r.bin' \|" && cd %:h && %:t:r.bin<CR>
+inoremap <F6> <C-o>:!echo -e "\\n\| executing '%:t:r.bin' \|\n" && cd %:h && %:t:r.bin <CR>
+nnoremap <F6>      :!echo -e "\\n\| executing '%:t:r.bin' \|\n" && cd %:h && %:t:r.bin <CR>
 
 " Save're & compile
 set makeprg=clang++\ -std=c++11\ -Weverything\ -Wno-c++98-compat\ -Wno-c++98-compat-pedantic\ %\ -o\ %:r.bin
 set errorformat=%f:%l:%c:\ %trror:\ %m
-imap <F7> <ESC><F8>:silent! exec "!echo -ne '\\n\| compiling \'%:t\' \|'" \| silent! make \| redraw! \| try \| clist \| catch \| echo "> compiling completed" \| endtry <CR>
-nmap <F7>      <F8>:silent! exec "!echo -ne '\\n\| compiling \'%:t\' \|'" \| silent! make \| redraw! \| try \| clist \| catch \| echo "> compiling completed" \| endtry <CR>
+imap <F7> <ESC><F8>:silent! exec "!echo -e '\\n\| compiling \'%:t\' \|'" \| make <CR>:redraw! \| try \| clist \| catch \| echo "> compiling completed" \| endtry <CR>
+nmap <F7>      <F8>:silent! exec "!echo -e '\\n\| compiling \'%:t\' \|'" \| make <CR>:redraw! \| try \| clist \| catch \| echo "> compiling completed" \| endtry <CR>
 
 " Save
 inoremap <F8> <ESC>:w<CR>
@@ -271,9 +275,25 @@ nnoremap <F8>      :w<CR>
 inoremap <F9> <C-o>:set wrap!<CR>
 nnoremap <F9>      :set wrap!<CR>
 
+" For adequate pasting (thanks https://coderwall.com/p/if9mda/)
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+function! XTermPasteBegin()
+       set pastetoggle=<Esc>[201~
+          set paste
+      return ""
+endfunction
+
 nnoremap mi :try \| lnext \| catch \| lfirst \| endtry<CR>
 nnoremap mo :try \| lprev \| catch \| llast  \| endtry<CR>
 nnoremap mf :YcmCompleter FixIt<CR>
+
+"imap <M-j> <C-g>j
+"imap <M-k> <C-g>k
+inoremap <C-l> <ESC>Go<CR><ESC>zti
 
 "" Keys workarounds
 " Navigation within a wrapped line
@@ -357,8 +377,8 @@ endif
 "1. Bind key ai si / noai nosi
 "2. Bind key to highlight 81th column
 "3. Bind key for unhighlighting search
-"x. Unidentation on backspace
-"5. Commenting lines by hotkey
+"4. Unidentation on backspace
+"x. Commenting lines by hotkey
 "6. english / vs russian .
 "
 "Some useful tips: https://habrahabr.ru/post/265441/
@@ -367,10 +387,10 @@ endif
 "       https://habrahabr.ru/post/102373/#comment_3179620
 "       https://habrahabr.ru/post/102373/#comment_3181848
 "8.  Better parens/braces/brackets/quotes autocompletion (this one does not recognize ^W); Surrounding
-"9.  Insertion with no crazy autoindentation
+"x.  Insertion with no crazy autoindentation
 "10. Syntax-based blocks folding
 "11. Semantic and keywords based autocompletion (C++ at least, Python ideally)
-"12. No softtab unindentation after any non-space symbols
+"xx. No softtab unindentation after any non-space symbols
 "13. Look at abilities of git integration plugins
 "14. Live diff hotkey
 "
@@ -407,6 +427,7 @@ let g:ycm_confirm_extra_conf=0
 let g:ycm_auto_trigger=0
 let g:ycm_enable_diagnostic_signs=0
 let g:ycm_always_populate_location_list=1
+let g:ycm_collect_identifiers_from_tags_files=1
 set previewheight=1
 set pumheight=1
 set completeopt=menu,longest
@@ -417,16 +438,21 @@ map <F2> <C-]>
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
 call vundle#rc()
-""Plugin 'auto-pairs'
-""Plugin 'delimitMate'  " maybe it could be configured well.
-"Plugin 'tabular'
-"Plugin 'vim-pasta'
+Plugin 'sickill/vim-pasta'
 ""Plugin 'clang_complete'
 "Plugin 'vim-inccomplete'
 "Plugin 'supertab'
-Plugin 'Valloric/YouCompleteMe'
+if (&ft == "cpp" || &ft == "c")
+    " Plugin 'Valloric/YouCompleteMe'  " it takes so much memory
+    Plugin 'octol/vim-cpp-enhanced-highlight'
+endif
 Plugin 'airblade/vim-gitgutter'
-Plugin 'tmux-plugins/vim-tmux-focus-events'  " focus-events should be set to on in .tmux.conf
+Plugin 'tmux-plugins/vim-tmux-focus-events'  " focus-events must be set to 'on' in .tmux.conf
+Plugin 'godlygeek/tabular'
+Plugin 'tmux-plugins/vim-tmux'
+Plugin 'tomtom/tcomment_vim'
+"Plugin 'tpope/vim-surround'  " crazy keybindings?
+"Plugin 'xolox/vim-misc'  " some plugins by this author look attractive
 "Plugin 'svermeulen/vim-easyclip'
 
 filetype plugin indent on  "what is this?
