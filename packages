@@ -48,6 +48,7 @@ grub
 gummi
 gutenprint
 gzip
+hexdino-git
 htop
 i3-wm
 i3lock
@@ -60,6 +61,7 @@ iputils
 iw
 jfsutils
 kdegraphics-okular
+ksh
 less
 libopenraw
 libtinfo
@@ -79,6 +81,8 @@ man-db
 man-pages
 mdadm
 mlocate
+moc
+mocp-scrobbler
 mpv
 nano
 nasm
@@ -101,6 +105,7 @@ poppler-glib
 procps-ng
 psmisc
 pulseaudio
+pydf
 python-pip
 python-yapf
 qbittorrent
@@ -160,6 +165,7 @@ vim-gruvbox-git
 vim-jellybeans
 vim-molokai
 vundle
+weechat
 wget
 which
 wpa_supplicant
@@ -255,4 +261,5 @@ yandex-disk
 yaourt
 ycm-generator-git
 youtube-dl
+zenity
 zsh
