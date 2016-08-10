@@ -64,6 +64,7 @@ kdegraphics-okular
 ksh
 less
 libopenraw
+libpng
 libtinfo
 libtraceevent
 licenses
