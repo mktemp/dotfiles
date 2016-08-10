@@ -232,7 +232,7 @@ colorscheme jellybeans  " + molokai, badwolf
 autocmd BufReadPost,FileReadPost,BufNewFile,BufEnter * call system("tmux rename-window 'vim: " . expand("%:t") . "'")
 autocmd VimLeave,FocusLost * call system("tmux setw automatic-rename")
 autocmd FocusLost * exec "try | w | catch | echom '' | endtry"
-au BufNewFile * start
+"au BufNewFile * start
 set title
 set display=lastline,uhex
 set incsearch  
