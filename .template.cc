@@ -1,12 +1,7 @@
 #pragma GCC optimize O2
 /* Don't overcomplicate. */
 /* Prefer using stack whenever possible. */
-/* Use "\n" instead of std::endl unless you know what you're doing. Also take in count std::flush. */
-/* Good luck. */
-
-/* tip:
- * bool(~x) == (x != -1); ~ inverts all bits
-*/
+/* Use "\n" instead of std::endl unless you know what you're doing; std::flush. */
 
 #include <bits/stdc++.h>
 using std::cin;
@@ -17,19 +12,19 @@ using std::cout;
 using ll = long long;
 #define pb push_back
 #define eb emplace_back
+#define forn(n) fornn(_I, (n))
+#define fornn(name, n) for (size_t name{}; name < n; ++name)
+const std::string nl = "\n";
 
 int main()
 {
     std::ios_base::sync_with_stdio(0);
-    std::cin.tie(nullptr);  // disables automatic flush of std::cout before std::cin -- not needed in interactive problems
-    
-    //#define TASKNAME "file"
-    //std::ifstream cin(TASKNAME + ".in");
-    //std::ofstream cout(TASKNAME + ".out");
+    std::cin.tie(nullptr);  // disables automatic flush of std::cout before std::cin -- take care in interactive problems
+    //std::ifstream   cin("TASKNAME.in");
+    //std::ofstream  cout("TASKNAME.out");
     //std::cin.rdbuf(cin.rdbuf());
     //std::cout.rdbuf(cout.rdbuf());
-    
-    /*******************************************/
+    /*************** GOOD LUCK ***************/
     
     // STARTHERE
 }
