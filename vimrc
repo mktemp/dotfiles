@@ -238,6 +238,8 @@ set display=lastline,uhex
 set incsearch  
 set autoread  " works in tmux only with vim-tmux-focus-events
 set updatetime=500
+set laststatus=2
+let g:airline#extensions#whitespace#enabled = 0
 
 " For mouse drag&dropping
 set mouse+=a
@@ -247,6 +249,10 @@ if &term =~ '^screen'
 endif
 
 "" Bindings
+
+" Gundo plugin
+inoremap <F3> <C-o>:GundoToggle<CR><ESC>
+nnoremap <F3>      :GundoToggle<CR><ESC>
 
 " Invoke shell
 inoremap <F4> <C-o>:shell<CR>
@@ -274,6 +280,10 @@ nnoremap <F8>      :w<CR>
 " Toggle wrapping
 inoremap <F9> <C-o>:set wrap!<CR>
 nnoremap <F9>      :set wrap!<CR>
+
+" For competitive programming 
+autocmd FileType cpp imap <F12> <ESC><F12>
+autocmd FileType cpp nnoremap <F12> :0r ~/.template.cc<CR>Gdd/STARTHERE<CR>zt6<C-y>S
 
 " For adequate pasting (thanks https://coderwall.com/p/if9mda/)
 let &t_SI .= "\<Esc>[?2004h"
@@ -446,11 +456,13 @@ if (&ft == "cpp" || &ft == "c")
     " Plugin 'Valloric/YouCompleteMe'  " it takes so much memory
     Plugin 'octol/vim-cpp-enhanced-highlight'
 endif
+Plugin 'rust-lang/rust.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tmux-plugins/vim-tmux-focus-events'  " focus-events must be set to 'on' in .tmux.conf
 Plugin 'godlygeek/tabular'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'tomtom/tcomment_vim'
+Plugin 'sjl/gundo.vim'
 "Plugin 'tpope/vim-surround'  " crazy keybindings?
 "Plugin 'xolox/vim-misc'  " some plugins by this author look attractive
 "Plugin 'svermeulen/vim-easyclip'
