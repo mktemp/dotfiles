@@ -240,6 +240,7 @@ set autoread  " works in tmux only with vim-tmux-focus-events
 set updatetime=500
 set laststatus=2
 let g:airline#extensions#whitespace#enabled = 0
+set textwidth=0
 
 " For mouse drag&dropping
 set mouse+=a
@@ -456,13 +457,14 @@ if (&ft == "cpp" || &ft == "c")
     " Plugin 'Valloric/YouCompleteMe'  " it takes so much memory
     Plugin 'octol/vim-cpp-enhanced-highlight'
 endif
-Plugin 'rust-lang/rust.vim'
+"Plugin 'rust-lang/rust.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tmux-plugins/vim-tmux-focus-events'  " focus-events must be set to 'on' in .tmux.conf
 Plugin 'godlygeek/tabular'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'sjl/gundo.vim'
+Plugin 'chrisbra/Recover.vim'
 "Plugin 'tpope/vim-surround'  " crazy keybindings?
 "Plugin 'xolox/vim-misc'  " some plugins by this author look attractive
 "Plugin 'svermeulen/vim-easyclip'
