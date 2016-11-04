@@ -61,9 +61,10 @@ alias cb="xclip -selection clipboard"
 alias cal="cal -m"
 alias R="R --quiet"
 alias nbook="jupyter-notebook"
+alias t="python2 ~/r/t/t.py --task-dir ~ --list todo --delete-if-empty"
 upgrd() {
     tmpfile=$(mktemp)
-    script -c 'yaourt -Su --color' $tmpfile
+    script -c "yaourt -Su --color $*" $tmpfile
     
     upgraded=$(cat $tmpfile | grep upgrading | tail -n 1 | cut -d / -f 1 | cut -d '(' -f 2)
     if [[ -z $upgraded ]] return
@@ -74,6 +75,10 @@ upgrd() {
 
 # do a du -hs on each dir on current path
 alias lsdir="for dir in *;do;if [ -d \$dir ];then;du -hsL \$dir;fi;done"
+
+alias -s txt=vim
+alias -s cc=vim
+alias -s c=vim
 
 # case-insensitive (uppercase from lowercase) completion
 #zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -157,15 +162,16 @@ PATH="$PATH\
 :/bin\
 :/opt/vmware/bin\
 :/usr/x86_64-pc-linux-gnu/gcc-bin/4.9.3\
-:~/.gem/ruby/2.3.0/bin\
+:$HOME/.gem/ruby/2.3.0/bin\
+:$HOME/.cargo/bin/\
 :/home/local/usr/bin/\
 :$HOME/go/bin\
 :.\
 :$HOME/repos/metasploit-framework\
 "
 
-EDITOR="/usr/bin/vim"
-VISUAL="/usr/bin/vim"
+export EDITOR="/usr/bin/vim"
+export VISUAL="/usr/bin/vim"
 
 # TODO
 # 0. Clear the whole structure
