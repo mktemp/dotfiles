@@ -21,6 +21,7 @@ cabal-install
 canto-curses-git
 celestia
 cgroup_event_listener
+charles
 chromium
 clang
 codeblocks
@@ -62,7 +63,6 @@ gcc-libs
 gconf-editor
 gdb
 gdm
-genymotion
 geogebra
 gettext
 ghc
@@ -109,11 +109,13 @@ gvfs-nfs
 gvfs-smb
 gzip
 hexdino-git
+hopper
 htop
 hydrogen
 i3-wm
 i3lock
 i3status
+icedtea-web
 imagemagick
 inetutils
 intellij-idea-community-edition
@@ -146,8 +148,10 @@ linux-zen
 linux-zen-headers
 logrotate
 lsof
+ltrace
 lua
 lvm2
+lynis
 lyx
 m4
 macchanger
@@ -230,6 +234,7 @@ rtorrent-pyro-git
 ruby-jekyll
 ruby-jekyll-paginate
 rustup
+rxvt-unicode
 s-nail
 sage-notebook
 sagemath
@@ -282,6 +287,7 @@ uftrace
 unrar
 usbip
 usbutils
+uswsusp-git
 util-linux
 vi
 vim
@@ -293,7 +299,6 @@ vim-jellybeans
 vim-molokai
 vinagre
 vino
-visual-studio-code
 volatility
 vundle
 weechat
