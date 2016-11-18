@@ -282,9 +282,11 @@ nnoremap <F8>      :w<CR>
 inoremap <F9> <C-o>:set wrap!<CR>
 nnoremap <F9>      :set wrap!<CR>
 
+nnoremap <F10> :put =strftime('%d %b %Y / %A') \| center<CR>
+
 " For competitive programming 
 autocmd FileType cpp imap <F12> <ESC><F12>
-autocmd FileType cpp nnoremap <F12> :0r ~/.template.cc<CR>Gdd/STARTHERE<CR>zt6<C-y>S
+autocmd FileType cpp nnoremap <F12> :0r ~/.template.cc<CR>Gdd/STARTHERE<CR>zt6<C-y>S<ESC>i<Tab>
 
 " For adequate pasting (thanks https://coderwall.com/p/if9mda/)
 let &t_SI .= "\<Esc>[?2004h"
