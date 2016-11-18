@@ -11,6 +11,7 @@ using namespace std;
 #define what_is(x) (std::cerr << (#x) << " is " << (x) << std::endl)
 #define wi what_is
 using ll = long long;
+using st = size_t;
 #define pb push_back
 #define eb emplace_back
 #define forn(n) fornn(_Temp_I_ ## __LINE__ ## __COUNTER__ ## _ ## __FILE__, (n))
