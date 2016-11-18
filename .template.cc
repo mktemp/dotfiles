@@ -11,6 +11,7 @@ using namespace std;
 #define what_is(x) (std::cerr << (#x) << " is " << (x) << std::endl)
 #define wi what_is
 using ll = long long;
+using ull = unsigned long long;
 using st = size_t;
 #define pb push_back
 #define eb emplace_back
