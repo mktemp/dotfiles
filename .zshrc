@@ -168,6 +168,8 @@ PATH="$PATH\
 :$HOME/go/bin\
 :.\
 :$HOME/repos/metasploit-framework\
+:$HOME\
+:$HOME/r/misc\
 "
 
 export EDITOR="/usr/bin/vim"
