@@ -1,23 +1,27 @@
-#pragma GCC optimize O2
 /* Don't overcomplicate. */
-/* Prefer using stack whenever possible. */
-/* Use "\n" instead of std::endl unless you know what you're doing; std::flush. */
+/* Don't construct unnecessary objects. */
+/* Stack is for everything. */
 
 #include <bits/stdc++.h>
-using std::cin;
-using std::cout;
 using namespace std;
+
 #define MAX(T) (std::numeric_limits<T>::max())
-#define what_is(x) (std::cerr << (#x) << " is " << (x) << std::endl)
-#define wi what_is
-using ll = long long;
-using ull = unsigned long long;
+using i8  = int_fast8_t;
+using i16 = int_fast16_t;
+using i32 = int_fast32_t;
+using i64 = int_fast64_t;
+using ui8  = uint_fast8_t;
+using ui16 = uint_fast16_t;
+using ui32 = uint_fast32_t;
+using ui64 = uint_fast64_t;
 using st = size_t;
+const std::string nl = "\n";
+
 #define pb push_back
 #define eb emplace_back
 #define forn(n) fornn(_Temp_I_ ## __LINE__ ## __COUNTER__ ## _ ## __FILE__, (n))
 #define fornn(name, n) for (size_t name{}; name < n; ++name)
-const std::string nl = "\n";
+#define what_is(x) (std::cerr << (#x) << " is " << (x) << std::endl)
 
 int main()
 {
