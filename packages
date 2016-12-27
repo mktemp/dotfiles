@@ -59,7 +59,7 @@ findutils
 firefox-developer
 fish
 flex
-fuse
+fuse2
 gawk
 gconf-editor
 gdb
@@ -141,6 +141,7 @@ less
 libopenraw
 libreoffice-fresh
 libtraceevent
+libui
 licenses
 links
 linux
@@ -247,8 +248,10 @@ sed
 servo-latest
 shadow
 shellcheck
+shuffle
 snownews
 sqlmap
+stack
 stellarium
 strace
 sublime-text-dev
