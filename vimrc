@@ -241,6 +241,7 @@ set updatetime=500
 set laststatus=2
 let g:airline#extensions#whitespace#enabled = 0
 set textwidth=0
+set scrolloff=1  " FIXME it is being ignored
 
 " For mouse drag&dropping
 set mouse+=a
@@ -259,21 +260,6 @@ nnoremap <F3>      :GundoToggle<CR><ESC>
 inoremap <F4> <C-o>:shell<CR>
 nnoremap <F4>      :shell<CR>
 
-" Compile're & run're
-" FIXME: unwanted keypress occurs after <F6> execution
-imap <F5> <ESC><F7>:exec (len(getqflist()) == 0) ? "call feedkeys(\"\<F6>\")" : "" <CR>  
-nmap <F5>      <F7>:exec (len(getqflist()) == 0) ? "call feedkeys(\"\<F6>\")" : "" <CR>
-
-" Run
-inoremap <F6> <C-o>:!echo -e "\\n\| executing '%:t:r.bin' \|\n" && cd %:h && %:t:r.bin <CR>
-nnoremap <F6>      :!echo -e "\\n\| executing '%:t:r.bin' \|\n" && cd %:h && %:t:r.bin <CR>
-
-" Save're & compile
-set makeprg=clang++\ -std=c++11\ -Weverything\ -Wno-c++98-compat\ -Wno-c++98-compat-pedantic\ %\ -o\ %:r.bin
-set errorformat=%f:%l:%c:\ %trror:\ %m
-imap <F7> <ESC><F8>:silent! exec "!echo -e '\\n\| compiling \'%:t\' \|'" \| make <CR>:redraw! \| try \| clist \| catch \| echo "> compiling completed" \| endtry <CR>
-nmap <F7>      <F8>:silent! exec "!echo -e '\\n\| compiling \'%:t\' \|'" \| make <CR>:redraw! \| try \| clist \| catch \| echo "> compiling completed" \| endtry <CR>
-
 " Save
 inoremap <F8> <ESC>:w<CR>
 nnoremap <F8>      :w<CR>
@@ -291,6 +277,11 @@ autocmd FileType cpp nnoremap <F12> :0r ~/.template.cc<CR>Gdd/STARTHERE<CR>zt6<C
 " For adequate pasting (thanks https://coderwall.com/p/if9mda/)
 let &t_SI .= "\<Esc>[?2004h"
 let &t_EI .= "\<Esc>[?2004l"
+
+" Align by 
+vmap a= :Tabularize /=<CR>
+vmap a; :Tabularize /::<CR>
+vmap a- :Tabularize /-><CR>
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
