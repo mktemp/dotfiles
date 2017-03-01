@@ -1,6 +1,5 @@
 adobe-source-code-pro-fonts
 alsa-utils
-android-studio
 aqemu
 arp-scan
 at
@@ -24,6 +23,7 @@ cgroup_event_listener
 charles
 chromium
 clang
+clang-tools-extra
 codeblocks
 coreutils
 cppreference
@@ -39,8 +39,10 @@ diffutils
 djview
 djvu2pdf
 dmenu
+dnsmasq
 dontpanic-git
 dos2unix
+dropbox
 e2fsprogs
 eclipse-java
 emacs-nox
@@ -57,6 +59,7 @@ file
 filesystem
 findutils
 firefox-developer
+firewalld
 fish
 flex
 fuse2
@@ -93,6 +96,7 @@ gnome-themes-standard
 gnome-tweak-tool
 gnome-user-docs
 gnome-user-share
+gparted
 graphviz
 grep
 grilo-plugins
@@ -171,8 +175,10 @@ mitmproxy
 mlocate
 moc
 mocp-scrobbler
+modemmanager
 mousetweaks
 mpv
+mtpfs
 mutter
 nano
 nasm
@@ -224,7 +230,6 @@ python2-gnuplot
 python2-pwntools
 python2-pyx
 python2-socketio
-python36
 qbittorrent
 qemu
 qemu-arch-extra
@@ -235,6 +240,7 @@ rfkill
 ropgadget
 ropper
 rssguard
+rsync
 rtorrent-pyro-git
 ruby-jekyll
 ruby-jekyll-paginate
@@ -251,6 +257,7 @@ shellcheck
 shuffle
 snownews
 sqlmap
+st
 stack
 stellarium
 strace
@@ -294,6 +301,7 @@ turbostat
 uemacs-git
 uftrace
 unrar
+usb_modeswitch
 usbip
 usbutils
 uswsusp-git
@@ -308,6 +316,7 @@ vim-jellybeans
 vim-molokai
 vinagre
 vino
+virt-manager
 volatility
 vundle
 weechat
@@ -320,7 +329,6 @@ xclip
 xdg-user-dirs-gtk
 xdialog
 xf86-input-evdev
-xf86-input-joystick
 xf86-input-keyboard
 xf86-input-libinput
 xf86-input-mouse
@@ -329,24 +337,12 @@ xf86-input-synaptics
 xf86-input-vmmouse
 xf86-input-void
 xf86-video-amdgpu
-xf86-video-ark
 xf86-video-ati
 xf86-video-dummy
 xf86-video-fbdev
-xf86-video-glint
-xf86-video-i128
 xf86-video-intel
-xf86-video-mach64
-xf86-video-neomagic
 xf86-video-nouveau
-xf86-video-nv
 xf86-video-openchrome
-xf86-video-r128
-xf86-video-savage
-xf86-video-siliconmotion
-xf86-video-sis
-xf86-video-tdfx
-xf86-video-trident
 xf86-video-vesa
 xf86-video-vmware
 xf86-video-voodoo
@@ -412,4 +408,5 @@ yelp
 youtube-dl
 zenity
 zip
+zoom
 zsh
