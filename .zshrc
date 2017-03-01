@@ -108,22 +108,23 @@ setopt INTERACTIVE_COMMENTS
 setopt EXTENDED_HISTORY
 setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
+setopt INC_APPEND_HISTORY
 
 ## PROMPT
 # git info
 git_branch() { 
-    br=$(git branch 2>/dev/null | grep '^\*' | cut -d ' ' -f 2)
-    if [[ -n "$br" ]] echo -n ":$br"
+    # br=$(git branch 2>/dev/null | grep '^\*' | cut -d ' ' -f 2)
+    # if [[ -n "$br" ]] echo -n ":$br"
 }
 git_number_of_unpushed_commits() { 
-    (echo -n '+'; git log --branches --not --remotes 2>/dev/null | grep ^commit | wc -l) | grep -v '^+0$'
+    # (echo -n '+'; git log --branches --not --remotes 2>/dev/null | grep ^commit | wc -l) | grep -v '^+0$'
 }
 git_any_modifications() { 
-    if [[ -n "$(git diff 2>/dev/null)" ]]; then
-        echo -n '\e[31m*'  # red
-    elif [[ -n "$(git diff $(tmp=$(git_branch); echo ${tmp:1}) 2>/dev/null)" ]]; then
-        echo -n '\e[37m*'  # black
-    fi
+    # if [[ -n "$(git diff 2>/dev/null)" ]]; then
+    #     echo -n '\e[31m*'  # red
+    # elif [[ -n "$(git diff $(tmp=$(git_branch); echo ${tmp:1}) 2>/dev/null)" ]]; then
+    #     echo -n '\e[37m*'  # black
+    # fi
 }
 
 # enable colors
@@ -170,6 +171,8 @@ PATH="$PATH\
 :$HOME/repos/metasploit-framework\
 :$HOME\
 :$HOME/r/misc\
+:$HOME/.local/bin\
+:$HOME/.cabal/bin\
 "
 
 export EDITOR="/usr/bin/vim"
