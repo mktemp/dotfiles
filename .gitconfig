@@ -1,6 +1,6 @@
 [user]
 	email = pseudo.ilya@gmail.com
-	name = Ilya
+	name = Ilya Pikulin
 	signingkey = 72F350CB991F0F175808F3426AF4752FD5826035
 [core]
 	editor = /usr/bin/vim
@@ -12,6 +12,7 @@
     co = checkout
     br = branch
     l  = log
+	oops = revert --no-edit HEAD
 
 [commit]
 	gpgsign = true
