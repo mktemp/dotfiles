@@ -1,8 +1,10 @@
 adobe-source-code-pro-fonts
 alsa-utils
 aqemu
+archlinux-themes-slim
 arp-scan
 at
+ats2-contrib
 audacity
 autoconf
 automake
@@ -21,10 +23,12 @@ canto-curses-git
 celestia
 cgroup_event_listener
 charles
+chmsee
 chromium
 clang
 clang-tools-extra
 codeblocks
+conky
 coreutils
 cppreference
 cpupower
@@ -250,11 +254,14 @@ s-nail
 sage-notebook
 sagemath
 scapy
+scrot
 sed
 servo-latest
 shadow
 shellcheck
 shuffle
+slim
+slim-themes
 snownews
 sqlmap
 st
@@ -304,7 +311,6 @@ unrar
 usb_modeswitch
 usbip
 usbutils
-uswsusp-git
 util-linux
 vi
 vim
