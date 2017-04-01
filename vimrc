@@ -270,6 +270,9 @@ nnoremap <F9>      :set wrap!<CR>
 
 nnoremap <F10> :put =strftime('%d %b %Y / %A') \| center<CR>
 
+vnoremap <C-c> "+y  
+    " must have +clipboard
+
 " For competitive programming 
 autocmd FileType cpp imap <F12> <ESC><F12>
 autocmd FileType cpp nnoremap <F12> :0r ~/.template.cc<CR>Gdd/STARTHERE<CR>zt6<C-y>S<ESC>i<Tab>
