@@ -183,12 +183,14 @@ modemmanager
 mousetweaks
 mpv
 mtpfs
+mupdf
 mutter
 nano
 nasm
 nautilus
 ncdu
 ncurses5-compat-libs
+neovim
 net-tools
 netctl
 netmenu
@@ -219,6 +221,7 @@ poppler-glib
 postgresql
 ppp
 procps-ng
+profanity
 psmisc
 pulseaudio
 pulseaudio-equalizer
