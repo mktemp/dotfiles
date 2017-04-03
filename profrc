@@ -1,0 +1,14 @@
+[logging]
+rotate=false
+shared=true
+chlog=true
+grlog=true
+
+[plugins]
+load=paste.py;imgur.py;browser.py;sounds.py;wikipedia-prof.py;
+
+[connection]
+account=pseudo.ilya@jabber.ru
+
+[ui]
+history=true
