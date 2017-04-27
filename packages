@@ -1,4 +1,6 @@
+2bwm
 adobe-source-code-pro-fonts
+alpine
 alsa-utils
 aqemu
 archlinux-themes-slim
@@ -15,7 +17,10 @@ bc
 bettercap-git
 bind-tools
 bison
+blender
 bless
+bmon
+boost
 burpsuite
 bzip2
 cabal-install
@@ -30,6 +35,7 @@ clang-tools-extra
 codeblocks
 conky
 coreutils
+cppcheck
 cppreference
 cpupower
 cryptsetup
@@ -61,6 +67,7 @@ fcron
 feh
 file
 filesystem
+finch
 findutils
 firefox-developer
 firewalld
@@ -119,12 +126,14 @@ gvfs-smb
 gzip
 hexdino-git
 hopper
+how-to-use-pvs-studio-free-git
 htop
 hydrogen
 i3-wm
 i3lock
 i3status
 icedtea-web
+iftop
 ifuse
 imagemagick
 inetutils
@@ -144,6 +153,7 @@ jpdftweak
 jq
 jupyter-nbconvert
 jupyter-notebook
+kchmviewer
 ksh
 kwalletmanager
 less
@@ -152,6 +162,7 @@ libreoffice-fresh
 libtraceevent
 libui
 licenses
+light
 links
 linux
 linux-git
@@ -159,6 +170,7 @@ linux-git-docs
 linux-git-headers
 linux-zen
 linux-zen-headers
+lldb
 logrotate
 lsof
 ltrace
@@ -195,6 +207,7 @@ neovim
 net-tools
 netctl
 netmenu
+newsbeuter
 nmap
 ntfs-3g-fuse
 octave
@@ -215,6 +228,7 @@ perl
 perl-image-exiftool
 perl-lwp-protocol-https
 pidgin
+pidgin-otr
 pixiewps
 pkg-config
 popcorntime-ce-git
@@ -226,6 +240,7 @@ profanity
 psmisc
 pulseaudio
 pulseaudio-equalizer
+pvs-studio
 pydf
 python-pip
 python-psycopg2
@@ -268,12 +283,14 @@ slim
 slim-themes
 slock
 snownews
+sparsehash
 sqlmap
 st
 stack
 stellarium
 strace
 sublime-text-dev
+subversion
 sudo
 sushi
 sysfsutils
@@ -301,6 +318,7 @@ texlive-plainextra
 texlive-pstricks
 texlive-publishers
 texlive-science
+time
 tmon
 tmux
 tor
@@ -309,6 +327,7 @@ tracker
 tt-rss
 ttf-dejavu
 ttf-inconsolata
+ttf-ms-fonts
 turbostat
 uemacs-git
 uftrace
@@ -328,6 +347,7 @@ vim-molokai
 vinagre
 vino
 virt-manager
+visual-studio-code
 volatility
 vundle
 weechat
@@ -336,6 +356,8 @@ which
 wireshark-gtk
 wpa_supplicant
 x86_energy_perf_policy
+xautolock
+xchm
 xclip
 xdg-user-dirs-gtk
 xdialog
