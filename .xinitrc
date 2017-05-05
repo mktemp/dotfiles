@@ -6,6 +6,9 @@ exec setxkbmap -layout us,ru -option "grp:caps_toggle" &
 xinput --disable $(xinput --list | grep 'SynPS/2 Synaptics TouchPad' | sed 's/.*id=\([[:digit:]]\+\).*/\1/')
 # synclient TouchpadOff=1
 
+# Modify modifiers:
+xmodmap ~/.Xmodmap
+
 # Finally, initialize the window manager:
 exec /usr/bin/i3
 #exec startkde
