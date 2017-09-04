@@ -1,9 +1,11 @@
 2bwm
+acroread
 adobe-source-code-pro-fonts
 alpine
 alsa-utils
 aqemu
 archlinux-themes-slim
+archlinux-xdg-menu
 arp-scan
 at
 athena-jot
@@ -45,6 +47,7 @@ cppreference
 cpupower
 cryptsetup
 ctags
+cuda
 dconf-editor
 device-mapper
 dhcpcd
@@ -86,7 +89,6 @@ gdb
 gdm
 geogebra
 gettext
-ghc
 gimp
 git
 git-lfs
@@ -144,7 +146,6 @@ i3-wm
 i3lock
 i3status
 icedtea-web
-idris
 iftop
 ifuse
 imagemagick
@@ -167,6 +168,7 @@ jq
 julia
 jupyter-nbconvert
 jupyter-notebook
+konqueror
 ksh
 kwalletmanager
 less
@@ -227,15 +229,20 @@ netctl
 netmenu
 network-manager-applet
 newsbeuter
+nginx
 nmap
 ntfs-3g-fuse
+nvidia
+obconf
+obmenu
 ocaml
 octave
+openbox
+openbox-menu
 openbsd-netcat
 openssh
 p7zip
 pacman
-pandoc
 parallel
 pass
 patch
@@ -272,7 +279,6 @@ python-virtualenv
 python-yapf
 python2-gevent
 python2-gnuplot
-python2-pwntools
 python2-pyx
 python2-socketio
 qbittorrent
@@ -300,17 +306,16 @@ scrot
 sed
 servo-latest
 shadow
-shellcheck
 shuffle
 simple-mtpfs
 slim
 slim-themes
 slock
 snownews
+socat
 sparsehash
 sqlmap
 st
-stack
 stellarium
 strace
 sublime-text-dev
@@ -322,6 +327,7 @@ systemd-sysvcompat
 tar
 task
 telegram-desktop-bin
+termcap
 texinfo
 texlive-bibtexextra
 texlive-core
@@ -340,6 +346,7 @@ texlive-publishers
 texlive-science
 thunderbird
 time
+tint2
 tiptop
 tmon
 tmux
@@ -380,6 +387,7 @@ wget
 which
 whois
 wireshark-gtk
+wkhtmltopdf
 wpa_supplicant
 x86_energy_perf_policy
 xautolock
@@ -406,7 +414,6 @@ xf86-video-vesa
 xf86-video-vmware
 xf86-video-voodoo
 xfsprogs
-xmonad
 xmonad-utils
 xorg-bdftopcf
 xorg-docs
