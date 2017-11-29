@@ -1,18 +1,21 @@
 [user]
 	email = pseudo.ilya@gmail.com
 	name = Ilya Pikulin
-	signingkey = 72F350CB991F0F175808F3426AF4752FD5826035
+	# signingkey = 72F350CB991F0F175808F3426AF4752FD5826035
 [core]
-	editor = /usr/bin/vim
+	editor = vim
 	excludesfile = /home/d/.gitignoreglobal
 
 [alias]
+    c  = commit
     ci = commit -v
     st = status
     co = checkout
-    br = branch
+    b = branch
     l  = log
-	oops = revert --no-edit HEAD
+    oops = revert --no-edit HEAD
 
 [commit]
-	gpgsign = true
+	# gpgsign = true
+[http]
+    #proxy = http://proxy.croc.ru:8000
