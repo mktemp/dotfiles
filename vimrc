@@ -229,9 +229,9 @@ set secure
 set exrc
 colorscheme jellybeans  " + molokai, badwolf
 "set t_Co=256  "256 colors mode, not using it
-autocmd BufReadPost,FileReadPost,BufNewFile,BufEnter * call system("tmux rename-window 'vim: " . expand("%:t") . "'")
-autocmd VimLeave,FocusLost * call system("tmux setw automatic-rename")
-autocmd FocusLost * exec "try | w | catch | echom '' | endtry"
+"autocmd BufReadPost,FileReadPost,BufNewFile,BufEnter * call system("tmux rename-window 'vim: " . expand("%:t") . "'")
+"autocmd VimLeave,FocusLost * call system("tmux setw automatic-rename")
+"autocmd FocusLost * exec "try | w | catch | echom '' | endtry"
 "au BufNewFile * start
 set title
 set display=lastline,uhex
@@ -242,6 +242,7 @@ set laststatus=2
 let g:airline#extensions#whitespace#enabled = 0
 set textwidth=0
 set scrolloff=1  " FIXME it is being ignored
+autocmd FocusLost * stopinsert
 
 " For mouse drag&dropping
 set mouse+=a
