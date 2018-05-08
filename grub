@@ -1,6 +1,0 @@
-# Most important custom options
-
-GRUB_CMDLINE_LINUX="cryptdevice=/dev/disk/by-uuid/78308728-0c72-418b-b04a-37e343292ba2:roothomefs root=/dev/mapper/roothomefs"
-
-GRUB_GFXMODE=1600x900x24  # can be get using xrandr
-GRUB_GFXPAYLOAD_LINUX=keep
