@@ -1,0 +1,13 @@
+[user]
+	email = ilya.pikulin@gmail.com
+	name = Ilya Pikulin
+[alias]
+	b = branch
+	c = commit
+	ci = commit -av
+	ca = commit --amend 
+	co = checkout
+	l = log --stat --graph --decorate
+	st = status
+[core]
+	editor = vim
