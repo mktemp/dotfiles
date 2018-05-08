@@ -1,0 +1,6 @@
+/* target location: .mozilla/firefox/=profilename=/chrome/userChrome.css */
+
+@namespace xul url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+#tabbrowser-tabs { visibility: collapse !important; } /* hide system tabs */
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header { display: none; } /* hide treestyletab header */
+
