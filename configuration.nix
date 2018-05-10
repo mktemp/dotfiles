@@ -112,10 +112,6 @@
 	services.xserver.windowManager.xmonad.enable = true;
 	services.xserver.windowManager.xmonad.enableContribAndExtras = true;
 
-	users.mutableUsers = false;
-	users.users.root = {
-		password = (import ./passwords.nix).root; # it's probably a security hole
-	};
 
 	environment.etc."systemd/sleep.conf".text = lib.mkAfter ''
 SuspendMode=suspend
@@ -129,7 +125,6 @@ HibernateDelaySec=900 # 15 min
 	services.logind.lidSwitch = "hybrid-sleep";
 
 	users.users.d = {
-		password = (import ./passwords.nix).d;
 		home = "/home/d";
 		createHome = true;
 		extraGroups = [ "wheel"  "libvirtd" ];
