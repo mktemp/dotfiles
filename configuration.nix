@@ -66,7 +66,7 @@
 	programs.vim.defaultEditor = true;
 
 	environment.systemPackages = with pkgs; [
-		wget links file binutils gnupg pciutils
+		wget links file binutils gnupg pciutils hdparm smartmontools hddtemp htop iftop iotop nethogs
 	];
 
 	# Some programs need SUID wrappers, can be configured further or are
@@ -130,7 +130,7 @@ HibernateDelaySec=900 # 15 min
 		extraGroups = [ "wheel"  "libvirtd" ];
 		useDefaultShell = true;
 		packages = with pkgs; [
-			firefox pkgs.gnome3.dconf-editor pkgs.gnome3.dconf dmenu git pass virtmanager feh
+			firefox pkgs.gnome3.dconf-editor pkgs.gnome3.dconf dmenu git pass virtmanager feh gajim xclip bat
 			(sublime3.overrideAttrs (oldAttrs: oldAttrs // { meta = oldAttrs.meta // { license = pkgs.stdenv.lib.licenses.free; }; }))
 			(st.overrideAttrs (oldAttrs: {
 				patches = map fetchpatch [ 
