@@ -10,10 +10,17 @@
 	boot.extraModulePackages = [ ];
 	boot.loader.grub.enableCryptodisk = true;
 	boot.loader.grub.memtest86.enable = true;
-	boot.initrd.luks.devices.boot.device = "/dev/disk/by-uuid/e52da0cf-b32c-496f-869f-0d5e059311a2";
+	boot.loader.grub.extraInitrd = "/boot/key-initrd"; # contains /key.bin
+	boot.initrd.luks.devices.boot = {
+		device = "/dev/disk/by-uuid/e52da0cf-b32c-496f-869f-0d5e059311a2";
+		keyFile = "/key.bin";
+		fallbackToPassword = true;
+	};
 	boot.initrd.luks.devices.hdd = {
 		device = "/dev/disk/by-uuid/8a22cb74-afee-4ba4-b367-69ed42cd9beb";
 		preLVM = true;
+		keyFile = "/key.bin";
+		fallbackToPassword = true;
 	};
 
 	fileSystems."/" = {
