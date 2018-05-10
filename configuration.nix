@@ -41,6 +41,8 @@
 	boot.loader.grub.device = "/dev/sda";
 
 	swapDevices = [ { device = "/dev/master/swap"; } ];
+
+	boot.kernelParams = [ "resume=/dev/master/swap" ];
 	# end inlined hardware-configuration.nix
 
 
@@ -114,6 +116,18 @@
 	users.users.root = {
 		password = (import ./passwords.nix).root; # it's probably a security hole
 	};
+
+	environment.etc."systemd/sleep.conf".text = lib.mkAfter ''
+SuspendMode=suspend
+HibernateMode=shutdown
+HybridSleepMode=suspend
+SuspendState=mem
+HibernateState=disk
+HybridSleepState=mem
+HibernateDelaySec=900 # 15 min
+	'';
+	services.logind.lidSwitch = "hybrid-sleep";
+
 	users.users.d = {
 		password = (import ./passwords.nix).d;
 		home = "/home/d";
