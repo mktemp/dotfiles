@@ -61,7 +61,7 @@
 	time.timeZone = "Europe/Moscow";
 
 	nixpkgs.config.packageOverrides = pkgs: {
-			# todo: configure vim
+		# todo: configure vim
 	};
 	programs.vim.defaultEditor = true;
 
@@ -73,7 +73,7 @@
 	# started in user sessions.
 	programs.mtr.enable = true;
 	programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
-	programs.zsh = { 
+	programs.zsh = {
 		enable = true;
 		enableAutosuggestions = true;
 		enableCompletion = true;
@@ -84,11 +84,11 @@
 		syntaxHighlighting.enable = true;
 		syntaxHighlighting.highlighters = [ "main" "brackets" ];
 	};
-	
+
 	fonts.fonts = with pkgs; [ font-droid ]; # better than any of the ligature fonts
-	
+
 	# To be reviewed in the future
-	
+
 	# services.openssh.enable = true;
 
 	# Open ports in the firewall.
@@ -96,7 +96,7 @@
 	# networking.firewall.allowedUDPPorts = [ ... ];
 	# Or disable the firewall altogether.
 	# networking.firewall.enable = false;
-	
+
 	services.kmscon.enable = true;
 
 	sound.enable = true;
@@ -111,7 +111,6 @@
 	services.xserver.displayManager.lightdm.enable = true;
 	services.xserver.windowManager.xmonad.enable = true;
 	services.xserver.windowManager.xmonad.enableContribAndExtras = true;
-
 
 	environment.etc."systemd/sleep.conf".text = lib.mkAfter ''
 SuspendMode=suspend
@@ -132,9 +131,9 @@ HibernateDelaySec=900 # 15 min
 		packages = with pkgs; [
 			firefox pkgs.gnome3.dconf-editor pkgs.gnome3.dconf dmenu git pass virtmanager feh gajim xclip bat
 			dunst libnotify xcompmgr
-			(sublime3.overrideAttrs (oldAttrs: oldAttrs // { meta = oldAttrs.meta // { license = pkgs.stdenv.lib.licenses.free; }; }))
+			(sublime3.overrideAttrs (oldAttrs: oldAttrs // { meta = oldAttrs.meta // { license = pkgs.stdenv.lib.licenses.free; }; })) # avoid allowUnfree = true
 			(st.overrideAttrs (oldAttrs: {
-				patches = map fetchpatch [ 
+				patches = map fetchpatch [
 					{
 						url = "https://st.suckless.org/patches/hidecursor/st-hidecursor-0.8.diff";
 						sha256 = "1n7dinjfqmra9lv59ly0zfglngg1n1x5qfqnghwqvxkpbfamkcpm";
@@ -152,7 +151,6 @@ HibernateDelaySec=900 # 15 min
 		]; # aiming at zero `nix-env -i`
 	};
 	users.defaultUserShell = pkgs.zsh;
-	#services.xserver.desktopManager.wallpaper.mode = "fill";
 
 	# This value determines the NixOS release with which your system is to be
 	# compatible, in order to avoid breaking some software such as database
