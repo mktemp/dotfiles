@@ -1,4 +1,14 @@
 {
+	"color_scheme": "Packages/Colorsublime - Themes/Green.tmTheme",
+	"fold_buttons": false,
 	"font_face": "Droid Sans Mono",
-	"font_size": 10
+	"font_size": 10,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
+	"save_on_focus_lost": true,
+	"theme": "Adaptive.sublime-theme",
 }
