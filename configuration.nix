@@ -85,7 +85,7 @@
 		syntaxHighlighting.highlighters = [ "main" "brackets" ];
 	};
 	
-
+	fonts.fonts = with pkgs; [ font-droid ]; # better than any of the ligature fonts
 	
 	# To be reviewed in the future
 	
