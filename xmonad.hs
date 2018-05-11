@@ -14,7 +14,12 @@ main = xmonad $ defaultConfig {
 	startupHook = do
 		spawn "xcompmgr"
 		spawn "dunst"
-		spawn "volnoti"
+		spawn "volnoti",
+	manageHook = doF W.swapDown,
+	layoutHook = avoidStruts $
+		(Mirror $ Tall 1 (3/100) (2/3))
+		||| Tall 1 (3/100) (2/3)
+		||| Full
 } `additionalKeysP` [
 	("M-S-p", spawn "passmenu --type")
 	] `additionalKeys` [
