@@ -15,7 +15,9 @@ main = xmonad $ defaultConfig {
 		spawn "xcompmgr"
 		spawn "dunst"
 		spawn "volnoti"
-} `additionalKeys` [
+} `additionalKeysP` [
+	("M-S-p", spawn "passmenu --type")
+	] `additionalKeys` [
 	((0, xF86XK_AudioRaiseVolume), spawn "volnoti-show $(amixer set Master,0 5%+ | grep -o '[[:digit:]]*%' | head -n 1)"),
 	((0, xF86XK_AudioLowerVolume), spawn "volnoti-show $(amixer set Master,0 5%- | grep -o '[[:digit:]]*%' | head -n 1)"),
 	((0, xF86XK_AudioMute), spawn "amixer set Master,0 toggle | grep '\\[on\\]' && volnoti-show $(amixer get Master,0 | grep -o '[[:digit:]]*%' | head -n 1) || volnoti-show -m"),
