@@ -132,7 +132,7 @@ HibernateDelaySec=900 # 15 min
 		extraGroups = [ "wheel"  "libvirtd" ];
 		useDefaultShell = true;
 		packages = with pkgs; [
-			firefox pkgs.gnome3.dconf-editor pkgs.gnome3.dconf dmenu git pass virtmanager feh gajim xclip bat
+			firefox pkgs.gnome3.dconf-editor pkgs.gnome3.dconf dmenu git pass virtmanager feh gajim xclip bat qbittorrent weechat mpv
 			dunst libnotify xcompmgr volnoti
 			(sublime3.overrideAttrs (oldAttrs: oldAttrs // { meta = oldAttrs.meta // { license = pkgs.stdenv.lib.licenses.free; }; })) # avoid allowUnfree = true
 			(st.overrideAttrs (oldAttrs: {
