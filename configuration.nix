@@ -123,6 +123,9 @@ HibernateDelaySec=900 # 15 min
 	'';
 	services.logind.lidSwitch = "hybrid-sleep";
 
+
+	programs.light.enable = true;
+
 	users.users.d = {
 		home = "/home/d";
 		createHome = true;

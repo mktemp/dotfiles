@@ -26,5 +26,7 @@ main = xmonad $ defaultConfig {
 	((0, xF86XK_AudioRaiseVolume), spawn "volnoti-show $(amixer set Master,0 5%+ | grep -o '[[:digit:]]*%' | head -n 1)"),
 	((0, xF86XK_AudioLowerVolume), spawn "volnoti-show $(amixer set Master,0 5%- | grep -o '[[:digit:]]*%' | head -n 1)"),
 	((0, xF86XK_AudioMute), spawn "amixer set Master,0 toggle | grep '\\[on\\]' && volnoti-show $(amixer get Master,0 | grep -o '[[:digit:]]*%' | head -n 1) || volnoti-show -m"),
-	((0, xF86XK_AudioMicMute), spawn "amixer set Capture,0 toggle | grep '\\[on\\]' && notify-send --urgency low 'Mic unmuted' || notify-send --urgency low 'Mic muted'")
+	((0, xF86XK_AudioMicMute), spawn "amixer set Capture,0 toggle | grep '\\[on\\]' && notify-send --urgency low 'Mic unmuted' || notify-send --urgency low 'Mic muted'"),
+	((0, xF86XK_MonBrightnessUp), spawn "light -A 5"),
+	((0, xF86XK_MonBrightnessDown), spawn "light -U 5")
 	]
