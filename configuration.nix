@@ -123,6 +123,9 @@ HibernateDelaySec=900 # 15 min
 	'';
 	services.logind.lidSwitch = "hybrid-sleep";
 
+	services.locate.enable = true;
+	services.locate.interval = "hourly";
+	services.locate.locate = pkgs.mlocate;
 
 	programs.light.enable = true;
 
