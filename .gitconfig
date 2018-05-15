@@ -4,7 +4,7 @@
 [alias]
 	b = branch
 	c = commit
-	ci = commit -av
+	ci = commit -v
 	ca = commit --amend 
 	co = checkout
 	l = log --stat --graph --decorate
