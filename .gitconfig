@@ -9,5 +9,6 @@
 	co = checkout
 	l = log --stat --graph --decorate
 	st = status
+	initial-commit = commit --allow-empty -m 'Initial commit'
 [core]
 	editor = vim
