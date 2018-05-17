@@ -15,7 +15,7 @@ main = xmonad $ defaultConfig {
 		spawn "xcompmgr"
 		spawn "dunst"
 		spawn "volnoti",
-	manageHook = composeAll [isDialog --> doF W.shiftMaster, doF W.swapDown],
+	manageHook = composeOne [isDialog -?> doF W.shiftMaster, Just <$> doF W.swapDown],
 	layoutHook = avoidStruts $
 		(Mirror $ Tall 1 (3/100) (2/3))
 		||| Tall 1 (3/100) (2/3)
