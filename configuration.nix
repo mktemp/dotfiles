@@ -66,8 +66,10 @@
 	programs.vim.defaultEditor = true;
 
 	environment.systemPackages = with pkgs; [
-		wget links file binutils gnupg pciutils hdparm smartmontools hddtemp htop iftop iotop nethogs
+		wget links file binutils gnupg pciutils hdparm smartmontools hddtemp htop iftop iotop nethogs psmisc
 	];
+
+	services.tor.enable = true;
 
 	# Some programs need SUID wrappers, can be configured further or are
 	# started in user sessions.
@@ -134,8 +136,8 @@ HibernateDelaySec=900 # 15 min
 		createHome = true;
 		extraGroups = [ "wheel"  "libvirtd" ];
 		useDefaultShell = true;
-		packages = with pkgs; [
-			firefox pkgs.gnome3.dconf-editor pkgs.gnome3.dconf dmenu git pass virtmanager feh gajim xclip bat qbittorrent weechat mpv
+		packages = with pkgs; with pkgs.gnome3; [
+			firefox dconf dconf-editor dmenu git pass virtmanager feh gajim xclip bat qbittorrent weechat mpv evince
 			dunst libnotify xcompmgr volnoti
 			(rustPlatform.buildRustPackage rec {
 				# 1.5 fucking month passed and still people haven't agreed upon a patch
