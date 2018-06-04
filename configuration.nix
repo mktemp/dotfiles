@@ -137,6 +137,39 @@ HibernateDelaySec=900 # 15 min
 		packages = with pkgs; [
 			firefox pkgs.gnome3.dconf-editor pkgs.gnome3.dconf dmenu git pass virtmanager feh gajim xclip bat qbittorrent weechat mpv
 			dunst libnotify xcompmgr volnoti
+			(rustPlatform.buildRustPackage rec {
+				# 1.5 fucking month passed and still people haven't agreed upon a patch
+				# https://github.com/NixOS/nixpkgs/pull/40622
+				# https://github.com/NixOS/nixpkgs/pull/39317
+				# https://github.com/NixOS/nixpkgs/pull/39313
+				# https://github.com/NixOS/nixpkgs/pull/39287
+				# btw there is pijul-0.10.1 available on crates.io, see #39287 for insights on building it.
+				name = "pijul-${version}";
+				version = "0.10.0";
+
+				src = fetchurl {
+					url = "https://pijul.com/releases/${name}.tar.gz";
+					sha256 = "1lkipcp83rfsj9yqddvb46dmqdf2ch9njwvjv8f3g91rmfjcngys";
+				};
+
+				nativeBuildInputs = [ pkgconfig ];
+
+				buildInputs = [ libsodium openssl ] ++ pkgs.stdenv.lib.optionals pkgs.stdenv.isDarwin (with darwin.apple_sdk.frameworks; [ Security ]);
+
+				doCheck = false;
+
+				cargoSha256 = "1419mlxa4p53hm5qzfd1yi2k0n1bcv8kaslls1nyx661vknhfamw";
+
+				preBuild = "cargo fetch"; # this shit does update Cargo.lock and I have no fucking clue about the reasoning behind it
+
+				meta = with pkgs.stdenv.lib; {
+					description = "A distributed version control system";
+					homepage = https://pijul.org;
+					license = with licenses; [ gpl2Plus ];
+					maintainers = [ maintainers.gal_bolle ];
+					platforms = platforms.all;
+				};
+			})
 			(sublime3.overrideAttrs (oldAttrs: oldAttrs // { meta = oldAttrs.meta // { license = pkgs.stdenv.lib.licenses.free; }; })) # avoid allowUnfree = true
 			(st.overrideAttrs (oldAttrs: {
 				patches = map fetchpatch [
