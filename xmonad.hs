@@ -7,7 +7,7 @@ import XMonad.Hooks.ManageDocks
 import Data.Ratio
 import Graphics.X11.ExtraTypes.XF86
 
-main = xmonad $ defaultConfig {
+main = xmonad $ ewmh defaultConfig {
 	modMask = mod1Mask,
 	terminal = "st -f 'Droid Sans Mono:size=10'",
 	borderWidth = 0,
@@ -19,7 +19,8 @@ main = xmonad $ defaultConfig {
 	layoutHook = avoidStruts $
 		(Mirror $ Tall 1 (3/100) (2/3))
 		||| Tall 1 (3/100) (2/3)
-		||| Full
+		||| Full,
+	handleEventHook = handleEventHook defaultConfig <+> fullscreenEventHook
 } `additionalKeysP` [
 	("M-S-p", spawn "passmenu --type")
 	] `additionalKeys` [
