@@ -85,6 +85,7 @@
 		ohMyZsh.theme = "avit";
 		syntaxHighlighting.enable = true;
 		syntaxHighlighting.highlighters = [ "main" "brackets" ];
+		shellInit = ''[ -z "$TMUX" ] && ${pkgs.tmux}/bin/tmux new-session && exit'';
 	};
 
 	fonts.fonts = with pkgs; [ font-droid ]; # better than any of the ligature fonts
@@ -173,15 +174,11 @@ HibernateDelaySec=900 # 15 min
 				};
 			})
 			(sublime3.overrideAttrs (oldAttrs: oldAttrs // { meta = oldAttrs.meta // { license = pkgs.stdenv.lib.licenses.free; }; })) # avoid allowUnfree = true
-			(st.overrideAttrs (oldAttrs: {
+			(st.overrideAttrs (oldAttrs: rec {
 				patches = map fetchpatch [
 					{
 						url = "https://st.suckless.org/patches/hidecursor/st-hidecursor-0.8.diff";
 						sha256 = "1n7dinjfqmra9lv59ly0zfglngg1n1x5qfqnghwqvxkpbfamkcpm";
-					}
-					{
-						url = "https://st.suckless.org/patches/scrollback/st-scrollback-0.8.diff";
-						sha256 = "0q7yisna58x62hdsdd3cnlnf1rbjzxgy9a3s725vahp0yavrwj61";
 					}
 					{
 						url = "https://st.suckless.org/patches/solarized/st-solarized-dark-20180411-041912a.diff";
