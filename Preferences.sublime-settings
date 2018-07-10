@@ -4,6 +4,7 @@
 	"fold_buttons": false,
 	"font_face": "Droid Sans Mono",
 	"font_size": 10,
+	"shift_tab_unindent": true,
 	"ignored_packages":
 	[
 		"Vintage"
