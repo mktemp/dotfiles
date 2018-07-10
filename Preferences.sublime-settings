@@ -1,5 +1,6 @@
 {
-	"color_scheme": "Packages/Colorsublime - Themes/Green.tmTheme",
+	"caret_style": "solid",
+	"color_scheme": "Packages/Colorsublime - Themes/Ascetic.tmTheme",
 	"fold_buttons": false,
 	"font_face": "Droid Sans Mono",
 	"font_size": 10,
