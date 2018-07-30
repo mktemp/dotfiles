@@ -15,7 +15,7 @@ main = xmonad $ ewmh defaultConfig {
 		spawn "xcompmgr"
 		spawn "dunst"
 		spawn "volnoti",
-	manageHook = composeOne [isDialog -?> doF W.shiftMaster, Just <$> doF W.swapDown],
+	manageHook = composeOne [transience, Just <$> doF W.swapDown],
 	layoutHook = avoidStruts $
 		(Mirror $ Tall 1 (3/100) (2/3))
 		||| Tall 1 (3/100) (2/3)
