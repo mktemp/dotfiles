@@ -66,7 +66,7 @@
 	programs.vim.defaultEditor = true;
 
 	environment.systemPackages = with pkgs; [
-		wget links file binutils gnupg pciutils hdparm smartmontools hddtemp htop iftop iotop nethogs psmisc
+		wget links file binutils gnupg pciutils hdparm smartmontools hddtemp htop iftop iotop nethogs psmisc ripgrep
 	];
 
 	services.tor.enable = true;
