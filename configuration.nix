@@ -1,6 +1,5 @@
 { config, lib, pkgs, stdenv, ... }:
 
-
 {
 	imports = [ ./hardware-configuration.nix ];
 
@@ -60,9 +59,6 @@
 
 	time.timeZone = "Europe/Moscow";
 
-	nixpkgs.config.packageOverrides = pkgs: {
-		# todo: configure vim
-	};
 	programs.vim.defaultEditor = true;
 
 	environment.systemPackages = with pkgs; [
@@ -77,7 +73,7 @@
 	programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
 	programs.zsh = {
 		enable = true;
-		enableAutosuggestions = true;
+		autosuggestions.enable = true;
 		enableCompletion = true;
 		interactiveShellInit = "ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=037'"; # future: check mail
 		ohMyZsh.enable = true;
