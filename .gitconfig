@@ -5,10 +5,11 @@
 	b = branch
 	c = commit
 	ci = commit -v
-	ca = commit --amend 
+	ca = commit --amend -v --date=now
 	co = checkout
 	l = log --stat --graph --decorate
 	st = status
 	initial-commit = commit --allow-empty -m 'Initial commit'
+	pushf = push --force-with-lease
 [core]
 	editor = vim
