@@ -2,14 +2,18 @@
 	email = ilya.pikulin@gmail.com
 	name = Ilya Pikulin
 [alias]
-	b = branch
+	b = branch --sort=-committerdate --format='%(HEAD) %(color:red)%(objectname:short)%(color:reset) %(color:yellow)%(refname:short)%(color:reset) %(color:green)%(committerdate:relative)%(color:reset) %(color:cyan)%(authorname)%(color:reset)'
 	c = commit
 	ci = commit -v
 	ca = commit --amend -v --date=now
 	co = checkout
 	l = log --stat --graph --decorate
-	st = status
+	st = status --untracked-files=no
 	initial-commit = commit --allow-empty -m 'Initial commit'
 	pushf = push --force-with-lease
+	cp = cherry-pick
+	resp = blame -C
 [core]
 	editor = vim
+[push]
+	default = current
